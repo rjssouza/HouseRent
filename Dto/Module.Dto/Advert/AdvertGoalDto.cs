@@ -2,10 +2,10 @@
 
 namespace Module.Dto.Advert
 {
-    public class AdvertGoalDto : BaseDto
+    /// <summary>
+    /// Intenção do anúncio (aluguel ou compra)
+    /// </summary>
+    public class AdvertGoalDto : DescriptionBaseDto
     {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
     }
 }

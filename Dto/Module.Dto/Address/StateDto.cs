@@ -6,7 +6,7 @@ namespace Module.Dto.Address
     /// <summary>
     /// Dados estado
     /// </summary>
-    public class StateDto : BaseDto
+    public class StateDto : NameBaseDto
     {
         /// <summary>
         /// Identificador do estado
@@ -18,11 +18,6 @@ namespace Module.Dto.Address
         /// </summary>
         /// <example>MG</example>
         public string Uf { get; set; }
-
-        /// <summary>
-        /// Nome do estado
-        /// </summary>
-        public string Name { get; set; }
 
         /// <summary>
         /// Código de área

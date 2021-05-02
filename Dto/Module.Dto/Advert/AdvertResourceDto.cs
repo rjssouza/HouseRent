@@ -3,10 +3,15 @@ using System;
 
 namespace Module.Dto.Advert
 {
-    public class AdvertResourceDto : BaseDto
+    /// <summary>
+    /// Recurso extra que o imóvel possui
+    /// </summary>
+    public class AdvertResourceDto : NameBaseDto
     {
-        public string Description { get; set; }
 
+        /// <summary>
+        /// Identificador do anúncio
+        /// </summary>
         public Guid AdvertHouseId { get; set; }
     }
 }

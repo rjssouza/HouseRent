@@ -1,19 +1,32 @@
 ﻿using System;
+using System.Text.Json.Serialization;
 
 namespace Module.Dto.Base
 {
-    public abstract class FilterBaseDto : FilterLimitBaseDto
+    /// <summary>
+    /// Classe base para filtros
+    /// </summary>
+    public abstract class FilterBaseDto 
     {
+        /// <summary>
+        /// Identificador da entidade
+        /// </summary>
         public Guid? Id { get; set; }
-    }
 
-    [Serializable]
-    public abstract class FilterLimitBaseDto
-    {
-        public string Keyword { get; set; }
+        /// <summary>
+        /// Chave De texto para consulta geral, varia de acordo com a entidade em questão
+        /// </summary>
+        public virtual string Keyword { get; set; }
 
+        /// <summary>
+        /// Quantidade de itens por página
+        /// </summary>
         public int? LimitMax { get; set; }
 
+        /// <summary>
+        /// Define se os limites devem ser utilizados ou não
+        /// </summary>
+        [JsonIgnore()]
         public bool LimitMustBeUsed
         {
             get
@@ -24,6 +37,9 @@ namespace Module.Dto.Base
             }
         }
 
+        /// <summary>
+        /// Pagina inicial
+        /// </summary>
         public int? LimitStart { get; set; }
     }
 }

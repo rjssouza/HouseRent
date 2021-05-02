@@ -49,11 +49,6 @@
             Identificador da cidade
             </summary>
         </member>
-        <member name="P:Module.Dto.Address.CountyDto.Name">
-            <summary>
-            Nome
-            </summary>
-        </member>
         <member name="P:Module.Dto.Address.CountyDto.IbgeCode">
             <summary>
             Código ibge
@@ -80,14 +75,59 @@
             </summary>
             <example>MG</example>
         </member>
-        <member name="P:Module.Dto.Address.StateDto.Name">
-            <summary>
-            Nome do estado
-            </summary>
-        </member>
         <member name="P:Module.Dto.Address.StateDto.AreaCode">
             <summary>
             Código de área
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advertiser.AdvertiserDto">
+            <summary>
+            Dados do anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserDto.ContactId">
+            <summary>
+            Identificador do contato do anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserDto.PictureId">
+            <summary>
+            Foto do anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserDto.Contato">
+            <summary>
+            Dados para contato
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserDto.UserId">
+            <summary>
+            Usuario de segurança associado ao anunciante para login
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advertiser.ContactDto">
+            <summary>
+            Dados para contato 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.ContactDto.Phone">
+            <summary>
+            Telefone fixo ou empresarial
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.ContactDto.Mail">
+            <summary>
+            Email 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.ContactDto.Cellphone">
+            <summary>
+            Celular
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertGoalDto">
+            <summary>
+            Intenção do anúncio (aluguel ou compra)
             </summary>
         </member>
         <member name="T:Module.Dto.Advert.AdvertHouseDto">
@@ -170,6 +210,155 @@
             Quantidade de garagem
             </summary>
         </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdvertHousePictureList">
+            <summary>
+            Lista de fotos do imóvel anunciado para locação ou compra
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdvertResourceList">
+            <summary>
+            Lista de recursos extras que o imóvel anunciado possui
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.Address">
+            <summary>
+            Enereço do imóvel disponível para locação
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdvertGoal">
+            <summary>
+            Intenção do anúncio (aluguel ou compra)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.HouseType">
+            <summary>
+            Tipo do imóvel (casa, apartamento, lote, etc..)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdvertStatusDto">
+            <summary>
+            Status do anúncio (vendido, publicado)
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertHouseFilterDto">
+            <summary>
+            Filtro para anuncios de imóveis
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseFilterDto.Keyword">
+            <summary>
+            Filtro por palavra chave do anúncio de imóvel (Título, Endereço ou Nome do Anunciante)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseFilterDto.HouseTypeId">
+            <summary>
+            Identificador do tipo de imóvel anunciado
+            88CFDF0C-03AD-42EA-A003-5795D0ACEFAF - Casa
+            8DFF6055-BED8-48C2-A19B-807EA92EC97E - Lote
+            651D9E0D-1F55-4B3E-A750-DD26B62B27E9 - Apartamento
+            </summary>
+            <example>88CFDF0C-03AD-42EA-A003-5795D0ACEFAF</example>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertHouseViewDto">
+            <summary>
+            Objeto auxiliar para construção da camada de visão para tela de edição ou cadastro de novo anúncio para locação de imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseViewDto.AdvertHouse">
+            <summary>
+            Anúncio de locação de imóvel existente
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseViewDto.HouseTypeSelectList">
+            <summary>
+            Lista para seleção do tipo de imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseViewDto.AdvertGoalSelectList">
+            <summary>
+            Lista para seleção do objetivo do anúncio
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertImageDto">
+            <summary>
+            Foto do imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertImageDto.ImageId">
+            <summary>
+            Identificador da imagem no repositorio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertImageDto.AdvertHouseId">
+            <summary>
+            Identificador do anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertImageDto.Order">
+            <summary>
+            Ordem de exibição das fotos
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertResourceDto">
+            <summary>
+            Recurso extra que o imóvel possui
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertResourceDto.AdvertHouseId">
+            <summary>
+            Identificador do anúncio
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertStatusDto">
+            <summary>
+            Status do anúncio (publicado ou vendido)
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.HouseTypeDto">
+            <summary>
+            Tipo do imóvel a ser anunciado
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.DescriptionBaseDto">
+            <summary>
+            Base objetos com nome e descrição
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.DescriptionBaseDto.Description">
+            <summary>
+            Descrição
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.FilterBaseDto">
+            <summary>
+            Classe base para filtros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.Id">
+            <summary>
+            Identificador da entidade
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.Keyword">
+            <summary>
+            Chave De texto para consulta geral, varia de acordo com a entidade em questão
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitMax">
+            <summary>
+            Quantidade de itens por página
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitMustBeUsed">
+            <summary>
+            Define se os limites devem ser utilizados ou não
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.FilterBaseDto.LimitStart">
+            <summary>
+            Pagina inicial
+            </summary>
+        </member>
         <member name="T:Module.Dto.Base.BaseGenericSelectDto`1">
             <summary>
             Classe abstrata para objetos de seleção combo, listview etc.
@@ -196,6 +385,16 @@
             Classe abstrata para de seleção combo com identificador do tipo guid
             </summary>
             <typeparam name="T"></typeparam>
+        </member>
+        <member name="T:Module.Dto.Base.NameBaseDto">
+            <summary>
+            Base para classes que possuem nome
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.NameBaseDto.Name">
+            <summary>
+            Nome
+            </summary>
         </member>
         <member name="T:Module.Dto.Config.DbSettingsDto">
             <summary>
@@ -230,6 +429,16 @@
         <member name="P:Module.Dto.Config.SettingsDto.ApiServicesUrl">
             <summary>
             Endereços de api de integração externa
+            </summary>
+        </member>
+        <member name="T:Module.Dto.PictureDto">
+            <summary>
+            Imagem de repositorio 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.PictureDto.Array">
+            <summary>
+            Objeto base 64 do objeto para exibição no cliente
             </summary>
         </member>
         <member name="T:Module.Dto.Sell.ContactRequestDto">
@@ -285,6 +494,21 @@
         <member name="P:Module.Dto.Sell.SellDto.ContactRequestId">
             <summary>
             Requisição de contato que gerou a venda
+            </summary>
+        </member>
+        <member name="T:Module.Dto.User.UserLoginDto">
+            <summary>
+            Entidade de acesso
+            </summary>
+        </member>
+        <member name="P:Module.Dto.User.UserLoginDto.Login">
+            <summary>
+            Dados de login (email)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.User.UserLoginDto.PasswordHash">
+            <summary>
+            Senha criptografada
             </summary>
         </member>
     </members>

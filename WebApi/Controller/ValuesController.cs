@@ -18,14 +18,10 @@ namespace WebApi.Controller
         /// </summary>
         /// <returns>Mensagem indicando o status da api</returns>
         [HttpGet]
-        [ProducesResponseType(typeof(StateDto), 200)]
+        [ProducesResponseType(200)]
         public IActionResult Get()
         {
-            var resultado = new StateDto()
-            {
-                Id = 31
-            };
-            return Ok(resultado);
+            return Ok();
         }
     }
 }

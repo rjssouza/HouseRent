@@ -1,5 +1,7 @@
-﻿using Module.Dto.Base;
+﻿using Module.Dto.Address;
+using Module.Dto.Base;
 using System;
+using System.Collections.Generic;
 
 namespace Module.Dto.Advert
 {
@@ -82,5 +84,35 @@ namespace Module.Dto.Advert
         /// Quantidade de garagem
         /// </summary>
         public int QtdGarage { get; set; }
+
+        /// <summary>
+        /// Lista de fotos do imóvel anunciado para locação ou compra
+        /// </summary>
+        public IEnumerable<AdvertImageDto> AdvertHousePictureList { get; set; }
+
+        /// <summary>
+        /// Lista de recursos extras que o imóvel anunciado possui
+        /// </summary>
+        public IEnumerable<AdvertResourceDto> AdvertResourceList { get; set; }
+
+        /// <summary>
+        /// Enereço do imóvel disponível para locação
+        /// </summary>
+        public AddressDto Address { get; set; }
+
+        /// <summary>
+        /// Intenção do anúncio (aluguel ou compra)
+        /// </summary>
+        public AdvertGoalDto AdvertGoal { get; set; }
+
+        /// <summary>
+        /// Tipo do imóvel (casa, apartamento, lote, etc..)
+        /// </summary>
+        public HouseTypeDto HouseType { get; set; }
+
+        /// <summary>
+        /// Status do anúncio (vendido, publicado)
+        /// </summary>
+        public AdvertStatusDto AdvertStatusDto { get; set; }
     }
 }

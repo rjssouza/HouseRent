@@ -5,17 +5,12 @@ namespace Module.Dto.Address
     /// <summary>
     /// Dados da cidade
     /// </summary>
-    public class CountyDto : BaseDto
+    public class CountyDto : NameBaseDto
     {
         /// <summary>
         /// Identificador da cidade
         /// </summary>
         public new int Id { get; set; }
-
-        /// <summary>
-        /// Nome
-        /// </summary>
-        public string Name { get; set; }
 
         /// <summary>
         /// Código ibge

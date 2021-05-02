@@ -2,10 +2,14 @@
 
 namespace Module.Dto
 {
-    public class PictureDto : BaseDto
+    /// <summary>
+    /// Imagem de repositorio 
+    /// </summary>
+    public class PictureDto : NameBaseDto
     {
-        public string Name { get; set; }
-
+        /// <summary>
+        /// Objeto base 64 do objeto para exibição no cliente
+        /// </summary>
         public byte[] Array { get; set; }
     }
 }

@@ -2,10 +2,10 @@
 
 namespace Module.Dto.Advert
 {
-    public class HouseTypeDto : BaseDto
+    /// <summary>
+    /// Tipo do imóvel a ser anunciado
+    /// </summary>
+    public class HouseTypeDto : DescriptionBaseDto
     {
-        public string Name { get; set; }
-
-        public string Description { get; set; }
     }
 }
