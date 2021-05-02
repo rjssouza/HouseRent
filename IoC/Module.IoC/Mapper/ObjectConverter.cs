@@ -48,7 +48,7 @@ namespace Module.IoC.Mapper
         {
             this.ConfigureAddressMapper(ref mapperConfigExpression);
             this.ConfigureAdvertiserMapper(ref mapperConfigExpression);
-            this.ConfigureAdvertMapper(ref mapperConfigExpression);
+            ConfigureAdvertMapper(ref mapperConfigExpression);
             this.ConfigureSellMapper(ref mapperConfigExpression);
         }
 

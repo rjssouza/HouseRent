@@ -1,5 +1,6 @@
 ﻿using AutoMapper;
 using Module.Dto.Advert;
+using Module.Dto.Advert.AdvertHouse;
 using Module.Repository.Model.Advert;
 
 namespace Module.IoC.Mapper
@@ -10,11 +11,12 @@ namespace Module.IoC.Mapper
         /// Configurações de mapeamento para objetos de entidade e dto do anúncio de imóvel
         /// </summary>
         /// <param name="mapperConfigExpression">Interface de configuração mapper</param>
-        public void ConfigureAdvertMapper(ref IMapperConfigurationExpression mapperConfigExpression)
+        public static void ConfigureAdvertMapper(ref IMapperConfigurationExpression mapperConfigExpression)
         {
             // Anuncio de imovel
             mapperConfigExpression.CreateMap<AdvertHouseDto, AdvertHouseModel>();
             mapperConfigExpression.CreateMap<AdvertHouseModel, AdvertHouseDto>();
+            mapperConfigExpression.CreateMap<CreateAdvertHouseRequestDto, AdvertHouseDto>();
 
             // Finalidade do anúncio
             mapperConfigExpression.CreateMap<AdvertGoalDto, AdvertGoalModel>();

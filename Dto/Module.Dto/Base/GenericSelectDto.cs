@@ -32,7 +32,6 @@ namespace Module.Dto.Base
     /// <summary>
     /// Classe abstrata para de seleção combo com identificador do tipo guid
     /// </summary>
-    /// <typeparam name="T"></typeparam>
     public class GenericGuidSelectDto : BaseGenericSelectDto<Guid>
     {
     }

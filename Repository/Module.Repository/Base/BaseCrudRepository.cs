@@ -17,7 +17,7 @@ namespace Module.Repository.Base
         public BaseCrudRepository(IDbConnectionFactory dbService)
                    : base(dbService)
         {
-            SimpleCRUD.SetDialect(SimpleCRUD.Dialect.MySQL);
+            SimpleCRUD.SetDialect(SimpleCRUD.Dialect.SQLServer);
         }
 
         /// <summary>
@@ -66,9 +66,9 @@ namespace Module.Repository.Base
         /// </summary>
         /// <param name="whereConditions">Objeto dinamico para filtro</param>
         /// <returns>Lista de acordo com o filtro dinamico</returns>
-        public virtual List<TModel> GetByDynamicFilter(dynamic whereConditions)
+        public virtual List<TModel> GetByDynamicFilter(object whereConditions)
         {
-            var resultadoEnumerado = this._dbService.DbConnection.GetList<TModel>((object)whereConditions, transaction: this._dbService.Transaction);
+            var resultadoEnumerado = this._dbService.DbConnection.GetList<TModel>(whereConditions, transaction: this._dbService.Transaction);
 
             return resultadoEnumerado.ToList();
         }
@@ -78,9 +78,9 @@ namespace Module.Repository.Base
         /// </summary>
         /// <param name="whereConditions">Objeto dinamico para filtro</param>
         /// <returns>Lista de acordo com o filtro dinamico</returns>
-        public TModel GetFirstEntityByDynamicFilter(dynamic whereConditions)
+        public TModel GetFirstEntityByDynamicFilter(object whereConditions)
         {
-            var modeloLista = this._dbService.DbConnection.GetList<TModel>((object)whereConditions, transaction: this._dbService.Transaction);
+            var modeloLista = this._dbService.DbConnection.GetList<TModel>(whereConditions, transaction: this._dbService.Transaction);
 
             return modeloLista.FirstOrDefault();
         }

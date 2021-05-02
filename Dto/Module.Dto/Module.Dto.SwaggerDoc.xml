@@ -39,6 +39,11 @@
             Cidade do imóvel
             </summary>
         </member>
+        <member name="P:Module.Dto.Address.AddressDto.CountyDto">
+            <summary>
+            Municipio do endereço
+            </summary>
+        </member>
         <member name="T:Module.Dto.Address.CountyDto">
             <summary>
             Dados da cidade
@@ -57,6 +62,11 @@
         <member name="P:Module.Dto.Address.CountyDto.Uf">
             <summary>
             Unidade federativa que a cidade faz parte
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Address.CountyDto.State">
+            <summary>
+            Estado do municipio
             </summary>
         </member>
         <member name="T:Module.Dto.Address.StateDto">
@@ -103,6 +113,31 @@
         <member name="P:Module.Dto.Advertiser.AdvertiserDto.UserId">
             <summary>
             Usuario de segurança associado ao anunciante para login
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advertiser.AdvertiserUserDto">
+            <summary>
+            Objeto para requisição de cadastro para novo anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.Email">
+            <summary>
+            Email de do anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.Password">
+            <summary>
+            Senha 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.PassowrdConfirm">
+            <summary>
+            Confirmação de senha
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.ContactInfo">
+            <summary>
+            Informações de contato
             </summary>
         </member>
         <member name="T:Module.Dto.Advertiser.ContactDto">
@@ -259,6 +294,91 @@
             </summary>
             <example>88CFDF0C-03AD-42EA-A003-5795D0ACEFAF</example>
         </member>
+        <member name="T:Module.Dto.Advert.AdvertHouseListItemDto">
+            <summary>
+            Anúncio para locação ou venda de imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.AdvertiserName">
+            <summary>
+            Nome do anunciante
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.Title">
+            <summary>
+            Título do anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.Description">
+            <summary>
+            Descrição do anúncio de locação
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.HouseTypeName">
+            <summary>
+            Tipo do imóvel anunciado (Lote, Terreno, Etc)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.FormattedAddress">
+            <summary>
+            Endereço do imóvel formatado
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.AdvertGoalName">
+            <summary>
+            Objetivo do anuncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.Price">
+            <summary>
+            Preço para efetuar a compra ou locação do imóvel no anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.QtdBathrooms">
+            <summary>
+            Quantidade de banheiros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.QtdBedromms">
+            <summary>
+            Quantidade de quartos
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.QtdRooms">
+            <summary>
+            Quantidade de salas
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.QtdSuite">
+            <summary>
+            Quantidade de suite
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.QtdGarage">
+            <summary>
+            Quantidade de garagem
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListItemDto.AdvertFirstPicture">
+            <summary>
+            Primeira foto do anúncio do imóvel (principal)
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertHouseListViewDto">
+            <summary>
+            Anúncio para locação ou venda de imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListViewDto.HouseTypeSelectList">
+            <summary>
+            Lista para seleção do tipo de imóvel
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListViewDto.AdvertGoalSelectList">
+            <summary>
+            Lista para seleção do objetivo do anúncio
+            </summary>
+        </member>
         <member name="T:Module.Dto.Advert.AdvertHouseViewDto">
             <summary>
             Objeto auxiliar para construção da camada de visão para tela de edição ou cadastro de novo anúncio para locação de imóvel
@@ -277,6 +397,91 @@
         <member name="P:Module.Dto.Advert.AdvertHouseViewDto.AdvertGoalSelectList">
             <summary>
             Lista para seleção do objetivo do anúncio
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto">
+            <summary>
+            Objeto para criar ou editar anuncio de locação de imoveis
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.Title">
+            <summary>
+            Título do anúncio (será exibido no cabeçalho da pagina do anúncio)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.Description">
+            <summary>
+            Descrição do anúncio de locação
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.HouseTypeId">
+            <summary>
+            Tipo do imóvel anunciado (Lote, Terreno, Etc)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.GoalId">
+            <summary>
+            Identificador da inteção para este anúncio (Locação ou Venda)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.StatusId">
+            <summary>
+            Status do anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.InternalAreaSize">
+            <summary>
+            Tamanho da área interna
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.ExternalAreaSize">
+            <summary>
+            Tamanho da área externa
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.Price">
+            <summary>
+            Preço para efetuar a compra ou locação do imóvel no anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdBathrooms">
+            <summary>
+            Quantidade de banheiros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdBedromms">
+            <summary>
+            Quantidade de quartos
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdRooms">
+            <summary>
+            Quantidade de salas
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdSuite">
+            <summary>
+            Quantidade de suite
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdGarage">
+            <summary>
+            Quantidade de garagem
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.AdvertHousePictureList">
+            <summary>
+            Lista de fotos do imóvel anunciado para locação ou compra
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.AdvertResourceList">
+            <summary>
+            Lista de recursos extras que o imóvel anunciado possui
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.Address">
+            <summary>
+            Enereço do imóvel disponível para locação
             </summary>
         </member>
         <member name="T:Module.Dto.Advert.AdvertImageDto">
@@ -299,6 +504,11 @@
             Ordem de exibição das fotos
             </summary>
         </member>
+        <member name="P:Module.Dto.Advert.AdvertImageDto.ImageArray">
+            <summary>
+            Imagem do anuncio em base 64
+            </summary>
+        </member>
         <member name="T:Module.Dto.Advert.AdvertResourceDto">
             <summary>
             Recurso extra que o imóvel possui
@@ -317,6 +527,16 @@
         <member name="T:Module.Dto.Advert.HouseTypeDto">
             <summary>
             Tipo do imóvel a ser anunciado
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Base.BaseDto">
+            <summary>
+            Classe base para data transfer object
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Base.BaseDto.Id">
+            <summary>
+            Identificador da entidade
             </summary>
         </member>
         <member name="T:Module.Dto.Base.DescriptionBaseDto">
@@ -384,7 +604,6 @@
             <summary>
             Classe abstrata para de seleção combo com identificador do tipo guid
             </summary>
-            <typeparam name="T"></typeparam>
         </member>
         <member name="T:Module.Dto.Base.NameBaseDto">
             <summary>
@@ -439,6 +658,36 @@
         <member name="P:Module.Dto.PictureDto.Array">
             <summary>
             Objeto base 64 do objeto para exibição no cliente
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Security.LoginRequestDto">
+            <summary>
+            Requisição de login
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Security.LoginRequestDto.Login">
+            <summary>
+            Email do usuário
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Security.LoginRequestDto.Password">
+            <summary>
+            Senha do usuário
+            </summary>
+        </member>
+        <member name="T:Module.Dto.User.Security.UserLoginDto">
+            <summary>
+            Entidade de acesso
+            </summary>
+        </member>
+        <member name="P:Module.Dto.User.Security.UserLoginDto.Login">
+            <summary>
+            Dados de login (email)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.User.Security.UserLoginDto.PasswordHash">
+            <summary>
+            Senha criptografada
             </summary>
         </member>
         <member name="T:Module.Dto.Sell.ContactRequestDto">
@@ -496,19 +745,222 @@
             Requisição de contato que gerou a venda
             </summary>
         </member>
-        <member name="T:Module.Dto.User.UserLoginDto">
+        <member name="T:Module.Dto.Validation.Api.ApiException">
             <summary>
-            Entidade de acesso
+            Exceção api
             </summary>
         </member>
-        <member name="P:Module.Dto.User.UserLoginDto.Login">
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode,System.String,System.Exception)">
             <summary>
-            Dados de login (email)
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+            <param name="message">Mensagem</param>
+            <param name="ex">Exceção</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode,System.String)">
+            <summary>
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+            <param name="message">Mensagem</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ApiException.#ctor(System.Net.HttpStatusCode)">
+            <summary>
+            Construtor da classe de exceção da api
+            </summary>
+            <param name="statusCode">Codigo http</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ApiException.StatusCode">
+            <summary>
+            Código http da exceção
             </summary>
         </member>
-        <member name="P:Module.Dto.User.UserLoginDto.PasswordHash">
+        <member name="T:Module.Dto.Validation.Api.ConfirmationException">
             <summary>
-            Senha criptografada
+            Exceção disparada quando necessário a confirmação de um usuário 
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ConfirmationException.#ctor">
+            <summary>
+            Construtor da confirmação de usuário
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ConfirmationException.#ctor(System.String)">
+            <summary>
+            Construtor da convirmação de usuário
+            </summary>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ConfirmationException.Message">
+            <summary>
+            Mensagem da exceção
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.DeniedAcessException">
+            <summary>
+            Exceção de acesso negado
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.DeniedAcessException.#ctor">
+            <summary>
+            Construtor 
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.Api.ValidationException">
+            <summary>
+            Exceção disparada após validação de regras de negócio
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor(Module.Dto.Validation.ValidationSummary)">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+            <param name="validation">Sumário de validação</param>
+        </member>
+        <member name="M:Module.Dto.Validation.Api.ValidationException.#ctor(System.String,System.String)">
+            <summary>
+            Construtor exceção de validação
+            </summary>
+            <param name="subject">Assunto da validação</param>
+            <param name="message">Mensagem da validação</param>
+        </member>
+        <member name="P:Module.Dto.Validation.Api.ValidationException.Validation">
+            <summary>
+            Sumário da validação
+            </summary>
+        </member>
+        <member name="T:Module.Dto.Validation.ValidationError">
+            <summary>
+            Objeto que representa o erro de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.#ctor(System.String,System.String)">
+            <summary>
+            Construtor do erro de validação
+            </summary>
+            <param name="subject">Assunto</param>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.#ctor(System.String,System.Collections.Generic.List{System.String})">
+            <summary>
+            Construtor do erro de validação
+            </summary>
+            <param name="subject">Assunto</param>
+            <param name="messages">Lista de mensagens</param>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.ContainsErrors">
+            <summary>
+            Flag que indica contém erro
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.Errors">
+            <summary>
+            Lista de erros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationError.Subject">
+            <summary>
+            Assunto da validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationError.GetErrorMessage(System.String,System.String)">
+            <summary>
+            Obtém a mensagens de erro
+            </summary>
+            <param name="errorIndicator">Caractere que indica a pontuação do erro</param>
+            <param name="errorSeparator">Separador </param>
+            <returns>Mensagem formatada</returns>
+        </member>
+        <member name="T:Module.Dto.Validation.ValidationSummary">
+            <summary>
+            Sumário de validação
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.#ctor">
+            <summary>
+            Construtor padrão sumário de validação
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.ContainsErrors">
+            <summary>
+            Flag que indica se sumário possui erros
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.ErrorMessage">
+            <summary>
+            Mensagem de erro da validação formatada
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Validation.ValidationSummary.Errors">
+            <summary>
+            Dicionário de erros
+            </summary>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.AddError(System.String,System.String)">
+            <summary>
+            Método que adiciona erro ao sumário
+            </summary>
+            <param name="subject">Tema do erro</param>
+            <param name="message">Mensagem de erro</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.AddValidationError(Module.Dto.Validation.ValidationError)">
+            <summary>
+            Método que adiciona um objeto de validação ao dicionário
+            </summary>
+            <param name="validationError">Objeto que representa o erro de validação</param>
+        </member>
+        <member name="M:Module.Dto.Validation.ValidationSummary.GetErrorMessage(System.String,System.String)">
+            <summary>
+            Obtém a mensagens de erro
+            </summary>
+            <param name="errorIndicator">Caractere que indica a pontuação do erro</param>
+            <param name="errorSeparator">Separador </param>
+            <returns>Mensagem formatada</returns>
+        </member>
+        <member name="T:Module.Dto.ViaCepResponseDto">
+            <summary>
+            Retorno via cep
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.ZipCode">
+            <summary>
+            Cep 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.Street">
+            <summary>
+            Logradouro do endereço
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.Complement">
+            <summary>
+            Complemento do endereço
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.Neighborhood">
+            <summary>
+            Bairro 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.CountyName">
+            <summary>
+            Municipio 
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.Uf">
+            <summary>
+            Unidade federativa endereço
+            </summary>
+        </member>
+        <member name="P:Module.Dto.ViaCepResponseDto.IbgeCode">
+            <summary>
+            Código ibge
             </summary>
         </member>
     </members>

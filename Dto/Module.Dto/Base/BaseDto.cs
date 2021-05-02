@@ -1,12 +1,15 @@
 ﻿using System;
-using System.ComponentModel;
 
 namespace Module.Dto.Base
 {
-    [Serializable]
+    /// <summary>
+    /// Classe base para data transfer object
+    /// </summary>
     public class BaseDto
     {
-        [Description("Identificador da entidade")]
+        /// <summary>
+        /// Identificador da entidade
+        /// </summary>
         public Guid Id { get; set; }
     }
 }

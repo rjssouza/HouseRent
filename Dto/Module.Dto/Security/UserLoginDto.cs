@@ -1,7 +1,7 @@
 ﻿using Module.Dto.Base;
 using System.Text.Json.Serialization;
 
-namespace Module.Dto.User
+namespace Module.Dto.User.Security
 {
     /// <summary>
     /// Entidade de acesso

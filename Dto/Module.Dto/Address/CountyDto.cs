@@ -21,5 +21,10 @@ namespace Module.Dto.Address
         /// Unidade federativa que a cidade faz parte
         /// </summary>
         public string Uf { get; set; }
+
+        /// <summary>
+        /// Estado do municipio
+        /// </summary>
+        public StateDto State { get; set; }
     }
 }

@@ -42,11 +42,11 @@ namespace Module.Factory.Conexao
         /// <summary>
         /// Inicializa a conexão e abre a mesma
         /// </summary>
-        /// <param name="conexaoString">String de conexão informada pelo construtor da injeção de dependencia</param>
-        public DbConnectionFactory(string conexaoString)
+        /// <param name="connectionString">String de conexão informada pelo construtor da injeção de dependencia</param>
+        public DbConnectionFactory(string connectionString)
         {
             this._dbTransaction = null;
-            this._dbConnection = new SqlConnection(conexaoString);
+            this._dbConnection = new SqlConnection(connectionString);
             this._dbConnection.Open();
         }
 
@@ -77,7 +77,8 @@ namespace Module.Factory.Conexao
         /// </summary>
         public void Rollback()
         {
-            this._dbTransaction.Rollback();
+            if (this._dbTransaction != null)
+                this._dbTransaction.Rollback();
         }
 
         /// <summary>

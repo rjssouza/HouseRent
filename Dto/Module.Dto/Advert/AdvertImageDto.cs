@@ -22,5 +22,10 @@ namespace Module.Dto.Advert
         /// Ordem de exibição das fotos
         /// </summary>
         public int Order { get; set; }
+
+        /// <summary>
+        /// Imagem do anuncio em base 64
+        /// </summary>
+        public byte[] ImageArray { get; set; }
     }
 }

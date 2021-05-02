@@ -1,4 +1,5 @@
-﻿using Module.Dto.Config;
+﻿using Microsoft.AspNetCore.Http;
+using Module.Dto.Config;
 using Module.Dto.Validation.Api;
 using Module.Integration.Interface.Base;
 using Newtonsoft.Json;
@@ -23,6 +24,11 @@ namespace Module.Integration.Base
         {
             // Do not change this code. Put cleanup code in 'Dispose(bool disposing)' method
             Dispose(disposing: false);
+        }
+
+        public BaseIntegration(IHttpClientFactory httpClientFactory)
+        {
+            this._httpClient = httpClientFactory.CreateClient(this.Name);
         }
 
         /// <summary>

@@ -153,7 +153,8 @@ namespace WebApi
                 options.JsonSerializerOptions.Converters.Add(new JsonConverterByteArrayGlobal());
             });
 
-            services.AddHttpContextAccessor();
+            services.AddHttpContextAccessor();           
+            services.AddHttpClient();
 
             services.AddSwaggerGen(c =>
             {

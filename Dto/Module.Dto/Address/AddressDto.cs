@@ -36,5 +36,10 @@ namespace Module.Dto.Address
         /// Cidade do imóvel
         /// </summary>
         public int CountyId { get; set; }
+
+        /// <summary>
+        /// Municipio do endereço
+        /// </summary>
+        public CountyDto CountyDto { get; set; }
     }
 }

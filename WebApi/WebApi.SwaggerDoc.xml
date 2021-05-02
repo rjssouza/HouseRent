@@ -14,6 +14,23 @@
             Objeto de configurações (registrado no início da aplicação)
             </summary>
         </member>
+        <member name="T:WebApi.Controller.AddressController">
+            <summary>
+            Controller de endereço
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.AddressController.AddressService">
+            <summary>
+            Serviço de endereço
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.AddressController.GetByCep(System.String)">
+            <summary>
+            Obtém dados de endereço a partir do cep
+            </summary>
+            <param name="zipCode">Cep do endereço</param>
+            <returns>Endereço preenchido</returns>
+        </member>
         <member name="T:WebApi.Controller.ValuesController">
             <summary>
             Controller de teste de template

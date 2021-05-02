@@ -137,6 +137,22 @@ namespace Module.IoC
                    .AsSelf()
                    .SingleInstance();
 
+            builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseFactory).Assembly.GetName()))
+                .Where(t => t.Name.EndsWith("Factory"))
+                .OnActivating(OnActivatingInstanceForTesting)
+                .AsImplementedInterfaces()
+                .InstancePerLifetimeScope()
+                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
+
+            builder.RegisterType<DbConnectionFactory>()
+                .As<IDbTransactionFactory>()
+                .As<IDbConnectionFactory>()
+                .UsingConstructor(typeof(string))
+                .InstancePerLifetimeScope()
+                .WithParameters(new[] {
+                    new NamedParameter("connectionString", conexaoDto.Default)
+                });
+
             builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseRepository).Assembly.GetName()))
                 .Where(t => t.Name.EndsWith("Repository"))
                 .OnActivating(OnActivatingInstanceForTesting)
@@ -154,22 +170,6 @@ namespace Module.IoC
                 .InterceptedBy(typeof(TransactionInterceptor))
                 .InstancePerLifetimeScope()
                 .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
-
-            builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseFactory).Assembly.GetName()))
-                .Where(t => t.Name.EndsWith("Factory"))
-                .OnActivating(OnActivatingInstanceForTesting)
-                .AsImplementedInterfaces()
-                .InstancePerLifetimeScope()
-                .PropertiesAutowired(PropertyWiringOptions.AllowCircularDependencies);
-
-            builder.RegisterType<DbConnectionFactory>()
-                .As<IDbTransactionFactory>()
-                .As<IDbConnectionFactory>()
-                .UsingConstructor(typeof(string))
-                .InstancePerLifetimeScope()
-                .WithParameters(new[] {
-                    new NamedParameter("connectionString", conexaoDto.Default)
-                });
 
             builder.RegisterAssemblyTypes(Assembly.Load(typeof(BaseIntegration).Assembly.GetName()))
                 .Where(t => t.Name.EndsWith("Integration"))
