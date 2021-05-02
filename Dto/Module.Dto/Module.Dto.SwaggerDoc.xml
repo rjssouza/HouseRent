@@ -270,7 +270,7 @@
             Tipo do imóvel (casa, apartamento, lote, etc..)
             </summary>
         </member>
-        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdvertStatusDto">
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.Status">
             <summary>
             Status do anúncio (vendido, publicado)
             </summary>

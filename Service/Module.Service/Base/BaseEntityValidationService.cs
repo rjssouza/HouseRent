@@ -5,7 +5,7 @@ using Module.Service.Validation.Interface.Base;
 
 namespace Module.Service.Base
 {
-    public abstract class BaseEntityValidationService<TModel, TDto, TKeyType, TRepository, TValidation> : BaseEntityService<TModel, TDto, TKeyType, TRepository>
+    public abstract class BaseEntityService<TModel, TDto, TKeyType, TRepository, TValidation> : BaseEntityService<TModel, TDto, TKeyType, TRepository>
         where TModel : BaseModel
         where TRepository : IBaseCrudRepository<TModel>
         where TValidation : IBaseCrudValidation<TModel>
