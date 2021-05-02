@@ -7,7 +7,6 @@ using System;
 
 namespace Module.Service
 {
-    //TODO implementar regras
     public class PictureService : BaseEntityService<PictureModel, PictureDto, Guid, IPictureRepository>, IPictureService
     {
         public override IPictureRepository CrudRepository { get; set; }

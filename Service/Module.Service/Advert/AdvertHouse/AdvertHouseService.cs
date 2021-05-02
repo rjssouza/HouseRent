@@ -8,7 +8,6 @@ using System;
 
 namespace Module.Service.Advert.AdvertHouse
 {
-    //TODO implementar regras
     public class AdvertHouseService : BaseEntityService<AdvertHouseModel, AdvertHouseDto, Guid, IAdvertHouseRepository>, IAdvertHouseService
     {
         public IAdvertResourceService AdvertResourceService { get; set; }

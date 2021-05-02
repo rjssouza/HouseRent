@@ -4,7 +4,7 @@ using System;
 
 namespace Module.Service.Interface.Security
 {
-    public interface IUsuarioLoginService : IBaseEntityService<UserLoginDto, Guid>
+    public interface IUserLoginService : IBaseEntityService<UserLoginDto, Guid>
     {
     }
 }

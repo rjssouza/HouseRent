@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Module.Dto.Advertiser;
+using Module.Service.Base;
+using Module.Service.Interface.Advertiser;
+using System;
 
 namespace Module.Service.Advertiser
 {
-    public class AdvertiserManagerService
+    public class AdvertiserManagerService : BaseService, IAdvertiserManagerService
     {
+        public void Register(AdvertiserUserDto advertiserUserDto)
+        {
+            throw new NotImplementedException();
+        }
     }
 }
