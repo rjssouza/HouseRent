@@ -15,21 +15,37 @@ namespace Module.Service.Validation.Base
         {
         }
 
+        /// <summary>
+        /// Efetua a chamada para validação de atualização de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
         public virtual void ValidateUpdate(TModel model)
         {
             ValidarModelo(model);
         }
 
+        /// <summary>
+        /// Efetua a chamada para validação de deleção de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
         public virtual void ValidateDeletion(TModel model)
         {
             ValidarModelo(model);
         }
 
+        /// <summary>
+        /// Efetua a chamada para validação de inserção de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
         public virtual void ValidateInsert(TModel model)
         {
             ValidarModelo(model);
         }
 
+        /// <summary>
+        /// Valida regras de negocio basicas implementadas no modelo de dados
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
         private static void ValidarModelo(TModel model)
         {
             if (model == null)

@@ -32,8 +32,4 @@
     <ProjectReference Include="..\Module.Service.Interface\Module.Service.Interface.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="Advertiser\" />
-  </ItemGroup>
-
 </Project>

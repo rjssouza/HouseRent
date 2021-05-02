@@ -16,9 +16,11 @@ namespace Module.Service.Base
         /// <param name="id">Identificador do anuncio de locação de imoveis</param>
         public virtual void Delete(TKeyType id)
         {
-            var addressModel = this.CrudRepository.GetEntityById(id);
+            var model = this.CrudRepository.GetEntityById(id);
+            this.ValidateDeletion(model);
+
             this.OpenTransaction();
-            this.CrudRepository.Delete(addressModel);
+            this.CrudRepository.Delete(model);
 
             this.Commit();
         }
@@ -43,6 +45,8 @@ namespace Module.Service.Base
         public virtual void Insert(TDto dtoObject)
         {
             var model = this.ObjectConverterFactory.ConvertTo<TModel>(dtoObject);
+            this.ValidateInsert(model);
+
             this.OpenTransaction();
             this.CrudRepository.Insert(model);
 
@@ -56,10 +60,36 @@ namespace Module.Service.Base
         public virtual void Update(TDto dtoObject)
         {
             var model = this.ObjectConverterFactory.ConvertTo<TModel>(dtoObject);
+            this.ValidateUpdate(model);
+
             this.OpenTransaction();
             this.CrudRepository.Update(model);
 
             this.Commit();
+        }
+
+        /// <summary>
+        /// Efetua a chamada para validação de deleção de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
+        public virtual void ValidateUpdate(TModel model)
+        {
+        }
+
+        /// <summary>
+        /// Efetua a chamada para validação de atualização de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
+        public virtual void ValidateDeletion(TModel model)
+        {
+        }
+
+        /// <summary>
+        /// Efetua a chamada para validação de inserção de dados da entidade
+        /// </summary>
+        /// <param name="model">Entidade de modelo </param>
+        public virtual void ValidateInsert(TModel model)
+        {
         }
     }
 }
