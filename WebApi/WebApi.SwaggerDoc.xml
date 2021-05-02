@@ -16,7 +16,7 @@
         </member>
         <member name="T:WebApi.Controller.ValuesController">
             <summary>
-            Controller de teste de template 
+            Controller de teste de template
             </summary>
         </member>
         <member name="M:WebApi.Controller.ValuesController.Get">
@@ -24,6 +24,13 @@
             Obter informação de saúde da api
             </summary>
             <returns>Mensagem indicando o status da api</returns>
+        </member>
+        <member name="M:WebApi.Controller.ValuesController.Post(Module.Dto.Address.StateDto)">
+            <summary>
+            Teste de doc
+            </summary>
+            <param name="estado">Objeto de estado</param>
+            <returns></returns>
         </member>
         <member name="T:WebApi.Filter.ExceptionFilter">
             <summary>

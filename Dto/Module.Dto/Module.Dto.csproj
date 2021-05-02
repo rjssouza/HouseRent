@@ -7,6 +7,8 @@
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <NoWarn>1701;1702;NU1701;</NoWarn>
+    <DocumentationFile>Module.Dto.SwaggerDoc.xml</DocumentationFile>
+    <OutputPath></OutputPath>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|AnyCPU'">
@@ -16,5 +18,11 @@
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Production|AnyCPU'">
     <NoWarn>1701;1702;NU1701;</NoWarn>
   </PropertyGroup>
+
+  <ItemGroup>
+    <None Update="Module.Dto.SwaggerDoc.xml">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
 
 </Project>

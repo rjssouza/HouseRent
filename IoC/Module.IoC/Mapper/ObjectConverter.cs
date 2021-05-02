@@ -43,9 +43,13 @@ namespace Module.IoC.Mapper
         /// <summary>
         /// Método chamada na inicialização para configurar as conversões
         /// </summary>
-        /// <param name="mapperConfigExpression"></param>
+        /// <param name="mapperConfigExpression">Interface de configuração mapper</param>
         private void ConfigureMapper(IMapperConfigurationExpression mapperConfigExpression)
         {
+            this.ConfigureAddressMapper(ref mapperConfigExpression);
+            this.ConfigureAdvertiserMapper(ref mapperConfigExpression);
+            this.ConfigureAdvertMapper(ref mapperConfigExpression);
+            this.ConfigureSellMapper(ref mapperConfigExpression);
         }
 
         /// <summary>

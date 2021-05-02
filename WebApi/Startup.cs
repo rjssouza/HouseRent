@@ -13,6 +13,7 @@ using Module.IoC.Interface;
 using Module.IoC.Register;
 using Module.Util.Json;
 using System;
+using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Reflection;
@@ -175,14 +176,28 @@ namespace WebApi
                     }
                 });
 
-                string applicationBasePath =
-                    PlatformServices.Default.Application.ApplicationBasePath;
-                string applicationName =
-                    PlatformServices.Default.Application.ApplicationName;
-                string caminhoXmlDoc =
-                    Path.Combine(applicationBasePath, $"{applicationName}.xml");
+                c.EnableAnnotations();
 
-                c.IncludeXmlComments(caminhoXmlDoc);
+                var security = new OpenApiSecurityRequirement
+                {                   
+                    {new OpenApiSecurityScheme() { Type = SecuritySchemeType.Http }, new string[] { }}
+                };
+                
+                c.AddSecurityDefinition(
+                    "Bearer",
+                    new OpenApiSecurityScheme
+                    {
+                        Description = "Copie 'Bearer ' + token'",
+                        Name = "Authorization"
+                    });
+
+                c.AddSecurityRequirement(security);
+
+                foreach (var name in Directory.GetFiles(AppDomain.CurrentDomain.BaseDirectory, "*.SwaggerDoc.XML", SearchOption.AllDirectories))
+                {
+                    c.IncludeXmlComments(name);
+                }
+
             });
 
             this.RegisterSettings();
