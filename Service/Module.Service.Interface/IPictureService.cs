@@ -4,14 +4,7 @@ using System;
 
 namespace Module.Service.Interface
 {
-    public interface IPictureService : IBaseService
+    public interface IPictureService : IBaseEntityService<PictureDto, Guid>
     {
-        PictureDto GetById(Guid id);
-
-        Guid Insert(PictureDto pictureDto);
-
-        void Update(PictureDto pictureDto);
-
-        void Delete(Guid id);
     }
 }

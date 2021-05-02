@@ -4,12 +4,11 @@ using System;
 
 namespace Module.Service.Interface.Advert
 {
-    public interface IAdvertHouseService : IBaseService
+    /// <summary>
+    /// Serviço para CRUD de anúncio de locação de imoveis 
+    /// </summary>
+    public interface IAdvertHouseService : IBaseEntityService<AdvertHouseDto, Guid>
     {
-        void Insert(AdvertHouseDto advertHouseDto);
 
-        void Update(AdvertHouseDto advertHouseDto);
-
-        AdvertHouseDto GetById(Guid id);
     }
 }

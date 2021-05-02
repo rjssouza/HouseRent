@@ -8,7 +8,7 @@ namespace Module.Service.Interface.Address
     /// <summary>
     /// Serviço de municipios
     /// </summary>
-    public interface ICountyService : IBaseService
+    public interface ICountyService : IBaseReadEntityService<CountyDto, int>
     {
         /// <summary>
         /// Retorna o municipio correspondente ao código ibge informado
@@ -21,13 +21,6 @@ namespace Module.Service.Interface.Address
         /// Obter seleção municipios
         /// </summary>
         /// <returns>Id do estado</returns>
-        IEnumerable<GenericIntSelectDto> GetSelection(int stateId);
-
-        /// <summary>
-        /// Obtem municipio pelo identificador
-        /// </summary>
-        /// <param name="id">Identificador do municipio</param>
-        /// <returns>Municipio</returns>
-        CountyDto GetById(int id);
+        IEnumerable<GenericIntSelectDto> GetSelection(string uf);
     }
 }

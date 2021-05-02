@@ -4,14 +4,7 @@ using System;
 
 namespace Module.Service.Interface.Security
 {
-    public interface IUsuarioLoginService : IBaseService
+    public interface IUsuarioLoginService : IBaseEntityService<UserLoginDto, Guid>
     {
-        UserLoginDto GetById(Guid id);
-
-        Guid Insert(UserLoginDto userLoginDto);
-
-        void Update(UserLoginDto userLoginDto);
-
-        void Delete(Guid id);
     }
 }

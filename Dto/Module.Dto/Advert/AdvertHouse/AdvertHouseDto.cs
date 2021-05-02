@@ -113,6 +113,6 @@ namespace Module.Dto.Advert
         /// <summary>
         /// Status do anúncio (vendido, publicado)
         /// </summary>
-        public AdvertStatusDto AdvertStatusDto { get; set; }
+        public AdvertStatusDto Status { get; set; }
     }
 }

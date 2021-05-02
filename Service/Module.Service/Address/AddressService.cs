@@ -8,20 +8,11 @@ using System;
 
 namespace Module.Service.Address
 {
-    public class AddressService : BaseService, IAddressService
+    public class AddressService : BaseEntityService<AddressModel, AddressDto, Guid, IAddressRepository>, IAddressService
     {
-        public IAddressRepository AddressRepository { get; set; }
         public IViaCepIntegration ViaCepIntegration { get; set; }
         public ICountyService CountyService { get; set; }
-
-        public void Delete(Guid id)
-        {
-            var addressModel = this.AddressRepository.GetEntityById(id);
-            this.OpenTransaction();
-            this.AddressRepository.Delete(addressModel);
-
-            this.Commit();
-        }
+        public override IAddressRepository CrudRepository { get; set; }
 
         public AddressDto GetAdressByZipCode(string cep)
         {
@@ -34,30 +25,12 @@ namespace Module.Service.Address
             return result;
         }
 
-        public AddressDto GetById(Guid id)
+        public override AddressDto GetById(Guid id)
         {
-            var addressModel = this.AddressRepository.GetEntityById(id);
-            var addressDto = this.ObjectConverterFactory.ConvertTo<AddressDto>(addressModel);
+            var result = base.GetById(id);
+            result.CountyDto = this.CountyService.GetById(result.CountyId);
 
-            return addressDto;
-        }
-
-        public void Insert(AddressDto addressDto)
-        {
-            var addressModel = this.ObjectConverterFactory.ConvertTo<AddressModel>(addressDto);
-            this.OpenTransaction();
-            this.AddressRepository.Insert(addressModel);
-
-            this.Commit();
-        }
-
-        public void Update(AddressDto addressDto)
-        {
-            var addressModel = this.ObjectConverterFactory.ConvertTo<AddressModel>(addressDto);
-            this.OpenTransaction();
-            this.AddressRepository.Update(addressModel);
-
-            this.Commit();
+            return result;
         }
     }
 }

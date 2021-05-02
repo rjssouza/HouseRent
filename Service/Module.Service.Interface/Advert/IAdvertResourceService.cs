@@ -5,16 +5,8 @@ using System.Collections.Generic;
 
 namespace Module.Service.Interface.Advert
 {
-    public interface IAdvertResourceService : IBaseService
+    public interface IAdvertResourceService : IBaseEntityService<AdvertResourceDto, Guid>
     {
-        void Insert(AdvertResourceDto advertResourceDto);
-
-        void Update(AdvertResourceDto advertResourceDto);
-
-        void Delete(Guid id);
-
-        AdvertResourceDto GetById(Guid id);
-
         IEnumerable<AdvertResourceDto> GetAdvertHouseResourceList(Guid adverHouseId);
     }
 }

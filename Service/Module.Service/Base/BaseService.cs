@@ -1,6 +1,7 @@
 ﻿using Module.Dto.Config;
 using Module.Factory.Interface;
 using Module.Factory.Interface.Conexao;
+using Module.Service.Interface.Base;
 using System;
 
 namespace Module.Service.Base
@@ -8,7 +9,7 @@ namespace Module.Service.Base
     /// <summary>
     /// Classe base para serviços
     /// </summary>
-    public abstract class BaseService : IDisposable
+    public abstract class BaseService : IBaseService
     {
         private bool disposedValue;
 

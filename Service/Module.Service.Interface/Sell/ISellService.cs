@@ -4,14 +4,7 @@ using System;
 
 namespace Module.Service.Interface.Sell
 {
-    public interface ISellService : IBaseService
+    public interface ISellService : IBaseEntityService<SellDto, Guid>
     {
-        SellDto GetById(Guid id);
-
-        void Insert(SellDto sellDto);
-
-        void Update(SellDto sellDto);
-
-        void Delete(Guid id);
     }
 }

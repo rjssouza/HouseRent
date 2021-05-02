@@ -4,16 +4,8 @@ using System;
 
 namespace Module.Service.Interface.Address
 {
-    public interface IAddressService : IBaseService
+    public interface IAddressService : IBaseEntityService<AddressDto, Guid>
     {
         AddressDto GetAdressByZipCode(string cep);
-
-        AddressDto GetById(Guid id);
-
-        void Insert(AddressDto addressDto);
-
-        void Update(AddressDto addressDto);
-
-        void Delete(Guid id);
     }
 }

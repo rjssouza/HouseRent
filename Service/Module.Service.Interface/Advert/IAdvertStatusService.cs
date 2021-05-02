@@ -6,10 +6,8 @@ using System.Collections.Generic;
 
 namespace Module.Service.Interface.Advert
 {
-    public interface IAdvertStatusService : IBaseService
+    public interface IAdvertStatusService : IBaseReadEntityService<AdvertStatusDto, Guid>
     {
         IEnumerable<GenericGuidSelectDto> GetSelection();
-
-        AdvertStatusDto GetById(Guid id);
     }
 }

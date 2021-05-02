@@ -4,14 +4,7 @@ using System;
 
 namespace Module.Service.Interface.Advertiser
 {
-    public interface IAdvertiserService : IBaseService
+    public interface IAdvertiserService : IBaseEntityService<AdvertiserDto, Guid>
     {
-        AdvertiserDto GetById(Guid id);
-
-        void Insert(AdvertiserDto advertiserDto);
-
-        void Update(AdvertiserDto advertiserDto);
-
-        void Delete(Guid id);
     }
 }

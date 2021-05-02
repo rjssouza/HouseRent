@@ -282,7 +282,7 @@
         </member>
         <member name="P:Module.Dto.Advert.AdvertHouseFilterDto.Keyword">
             <summary>
-            Filtro por palavra chave do anúncio de imóvel (Título, Endereço ou Nome do Anunciante)
+            Filtro por palavra chave do anúncio de imóvel (Título, Descricao ou Nome do Anunciante)
             </summary>
         </member>
         <member name="P:Module.Dto.Advert.AdvertHouseFilterDto.HouseTypeId">
@@ -293,6 +293,11 @@
             651D9E0D-1F55-4B3E-A750-DD26B62B27E9 - Apartamento
             </summary>
             <example>88CFDF0C-03AD-42EA-A003-5795D0ACEFAF</example>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseFilterDto.OrderBy">
+            <summary>
+            Ordernar por coluna
+            </summary>
         </member>
         <member name="T:Module.Dto.Advert.AdvertHouseListItemDto">
             <summary>
@@ -377,6 +382,11 @@
         <member name="P:Module.Dto.Advert.AdvertHouseListViewDto.AdvertGoalSelectList">
             <summary>
             Lista para seleção do objetivo do anúncio
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Advert.AdvertHouseListViewDto.OrderBySelectList">
+            <summary>
+            Seleção de ordenação customizada
             </summary>
         </member>
         <member name="T:Module.Dto.Advert.AdvertHouseViewDto">
