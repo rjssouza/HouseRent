@@ -1,4 +1,5 @@
-﻿using Module.Dto.Address;
+﻿using Dapper;
+using Module.Dto.Address;
 using Module.Dto.Base;
 using Module.Factory.Interface.Conexao;
 using Module.Repository.Base;
@@ -6,6 +7,7 @@ using Module.Repository.Interface.Address;
 using Module.Repository.Model.Address;
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace Module.Repository.Address
 {
@@ -15,9 +17,18 @@ namespace Module.Repository.Address
         {
         }
 
-        public IEnumerable<GenericIntSelectDto> GetSelection(int stateId)
+        /// <summary>
+        /// Obter seleção municipios 
+        /// </summary>
+        /// <returns>Id do estado</returns>
+        public IEnumerable<GenericIntSelectDto> GetSelection(string uf)
         {
-            throw new System.NotImplementedException();
+            var sql = new StringBuilder("select id as Value, name as Text from county where uf = @uf ");
+            var param = new DynamicParameters();
+            param.Add("uf", uf);
+            var result = this.Select<GenericIntSelectDto>(sql.ToString(), param);
+
+            return result;
         }
     }
 }

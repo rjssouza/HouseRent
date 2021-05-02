@@ -9,7 +9,7 @@ namespace Module.Dto.Advert
     public class AdvertHouseFilterDto : FilterBaseDto
     {
         /// <summary>
-        /// Filtro por palavra chave do anúncio de imóvel (Título, Endereço ou Nome do Anunciante)
+        /// Filtro por palavra chave do anúncio de imóvel (Título, Descricao ou Nome do Anunciante)
         /// </summary>
         public override string Keyword { get => base.Keyword; set => base.Keyword = value; }
 
@@ -20,6 +20,11 @@ namespace Module.Dto.Advert
         /// 651D9E0D-1F55-4B3E-A750-DD26B62B27E9 - Apartamento
         /// </summary>
         /// <example>88CFDF0C-03AD-42EA-A003-5795D0ACEFAF</example>
-        public Guid HouseTypeId { get; set; }
+        public Guid? HouseTypeId { get; set; }
+
+        /// <summary>
+        /// Ordernar por coluna
+        /// </summary>
+        public string OrderBy { get; set; }
     }
 }

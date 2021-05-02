@@ -18,5 +18,10 @@ namespace Module.Dto.Advert
         /// Lista para seleção do objetivo do anúncio
         /// </summary>
         public IEnumerable<GenericGuidSelectDto> AdvertGoalSelectList { get; set; }
+
+        /// <summary>
+        /// Seleção de ordenação customizada
+        /// </summary>
+        public IEnumerable<BaseGenericSelectDto<string>> OrderBySelectList { get; set; }
     }
 }

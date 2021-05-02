@@ -16,7 +16,7 @@ namespace Module.Repository.Address
 
         public IEnumerable<BaseGenericSelectDto<string>> GetSelection()
         {
-            var sql = new StringBuilder("select uf as Value, name as Name from state ");
+            var sql = new StringBuilder("select uf as Value, name as Text from state ");
             var result = this.Select<BaseGenericSelectDto<string>>(sql.ToString());
 
             return result;
