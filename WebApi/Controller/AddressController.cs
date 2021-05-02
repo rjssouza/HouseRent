@@ -27,7 +27,7 @@ namespace WebApi.Controller
         [Route("{zipCode}")]
         [AllowAnonymous]
         [ProducesResponseType(typeof(AddressDto), 200)]
-        public IActionResult GetByCep(string zipCode)
+        public IActionResult GetAdressByZipCode(string zipCode)
         {
             var result = this.AddressService.GetAdressByZipCode(zipCode);
 
