@@ -18,6 +18,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="BCrypt.Net-Next" Version="4.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\..\Dto\Module.Dto\Module.Dto.csproj" />
     <ProjectReference Include="..\..\Factory\Module.Factory.Interface\Module.Factory.Interface.csproj" />
     <ProjectReference Include="..\..\Integration\Module.Integration.Interface\Module.Integration.Interface.csproj" />

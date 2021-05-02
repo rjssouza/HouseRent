@@ -18,6 +18,12 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Mapper\Configuracoes\**" />
+    <EmbeddedResource Remove="Mapper\Configuracoes\**" />
+    <None Remove="Mapper\Configuracoes\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Autofac" Version="6.2.0" />
     <PackageReference Include="Autofac.Extras.DynamicProxy" Version="6.0.0" />
     <PackageReference Include="AutoMapper" Version="10.1.1" />
@@ -33,10 +39,6 @@
     <ProjectReference Include="..\..\Service\Module.Service\Module.Service.csproj" />
     <ProjectReference Include="..\..\Utilidade\Module.Util\Module.Util.csproj" />
     <ProjectReference Include="..\Module.IoC.Interface\Module.IoC.Interface.csproj" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Mapper\Configuracoes\" />
   </ItemGroup>
 
 </Project>

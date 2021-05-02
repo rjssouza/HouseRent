@@ -1,6 +1,5 @@
 ﻿using Dapper;
 using Module.Factory.Interface.Conexao;
-using Module.Repository.Interface.Base;
 using Module.Repository.Model.Base;
 using System;
 using System.Collections.Generic;
@@ -12,7 +11,7 @@ namespace Module.Repository.Base
     /// Classe base para repositorios que implementa métodos de CRUD utilizando o DAPPER com um modelo de dados (entity) já informado
     /// </summary>
     /// <typeparam name="TModel">Modelo de dados</typeparam>
-    public abstract class BaseCrudRepository<TModel> : BaseRepository, IBaseCrudRepository<TModel>
+    public abstract class BaseCrudRepository<TModel> : BaseRepository
         where TModel : BaseModel
     {
         public BaseCrudRepository(IDbConnectionFactory dbService)

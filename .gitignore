@@ -42,3 +42,4 @@
 /WebApi/bin
 /WebApi/obj
 /.vs
+/Repository/Module.Repository/Module.Repository.csproj.user
