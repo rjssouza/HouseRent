@@ -14,6 +14,7 @@ Antes de começar a utilizar os serviços abaixo é necessário ter um token de 
 Para utilizar os serviços listados abaixo não é necessário realizar o cadastro como anunciante.
 * Listar anúncios
 * Solicitar contato
+* Efetuar busca por endereço
 
 Toda documentação detalhada deste serviço api se encontra no seguinte link:
 
