@@ -24,6 +24,7 @@ namespace Module.Repository.Advert
         {
             var sql = new StringBuilder(@"select
 											ROW_NUMBER() OVER ( ORDER BY advert_house.id ) AS RowNum,
+                                            advert_house.id as Id,
 											advertiser.name as AdvertiserName,
 											advert_house.title as Title,
 											advert_house.description as Description,

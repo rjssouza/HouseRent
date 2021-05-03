@@ -414,6 +414,11 @@
             Objeto para criar ou editar anuncio de locação de imoveis
             </summary>
         </member>
+        <member name="M:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.#ctor">
+            <summary>
+            Construtor padrao
+            </summary>
+        </member>
         <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.Title">
             <summary>
             Título do anúncio (será exibido no cabeçalho da pagina do anúncio)

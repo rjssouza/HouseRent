@@ -5,6 +5,7 @@ using Module.Dto.Advert.AdvertHouse;
 using Module.Dto.Sell;
 using Module.Service.Base;
 using Module.Service.Interface;
+using Module.Service.Interface.Address;
 using Module.Service.Interface.Advert;
 using Module.Service.Interface.Sell;
 using Module.Service.Validation.Interface.Advert.AdvertHouse;
@@ -16,6 +17,8 @@ namespace Module.Service.Advert.AdvertHouse
 {
     public class AdvertHouseManagerViewService : BaseService, IAdvertHouseManagerViewService
     {
+        private const string PUBLISHED = "9E37FB70-3EC7-4E60-8BF3-1BD4E942C7DE";
+
         public IAdvertHouseManagerValidation AdvertHouseManagerValidation { get; set; }
         public ISellService SellService { get; set; }
         public IAdvertHouseService AdvertHouseService { get; set; }
@@ -26,6 +29,7 @@ namespace Module.Service.Advert.AdvertHouse
         public IPictureService PictureService { get; set; }
         public IAdvertImageService AdvertImageService { get; set; }
         public IHttpContextAccessor HttpContextAccessor { get; set; }
+        public IAddressService AddressService { get; set; }
 
         public AdvertHouseManagerViewService(IHttpContextAccessor httpContextAccessor)
         {
@@ -37,8 +41,10 @@ namespace Module.Service.Advert.AdvertHouse
             var advertHouseDto = this.ObjectConverterFactory.ConvertTo<AdvertHouseDto>(createAdvertHouseRequestDto);
             var advertiserId = this.HttpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Sid).Value;
             advertHouseDto.AdvertiserId = Guid.Parse(advertiserId);
-            var advertHouseId = this.AdvertHouseService.Insert(advertHouseDto);
             this.OpenTransaction();
+            advertHouseDto.StatusId = Guid.Parse(PUBLISHED);
+            advertHouseDto.AddressId = this.AddressService.Insert(createAdvertHouseRequestDto.Address);
+            var advertHouseId = this.AdvertHouseService.Insert(advertHouseDto);
             this.InsertResourceList(advertHouseId, createAdvertHouseRequestDto.AdvertResourceList);
             this.InsertAdvertHousePictureList(advertHouseId, createAdvertHouseRequestDto.AdvertHousePictureList);
 

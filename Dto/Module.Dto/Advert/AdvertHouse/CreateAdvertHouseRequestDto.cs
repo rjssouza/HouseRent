@@ -11,6 +11,15 @@ namespace Module.Dto.Advert.AdvertHouse
     public class CreateAdvertHouseRequestDto : BaseDto
     {
         /// <summary>
+        /// Construtor padrao
+        /// </summary>
+        public CreateAdvertHouseRequestDto()
+        {
+            this.AdvertHousePictureList = new List<AdvertImageDto>();
+            this.AdvertResourceList = new List<AdvertResourceDto>();
+        }
+
+        /// <summary>
         /// Título do anúncio (será exibido no cabeçalho da pagina do anúncio)
         /// </summary>
         public string Title { get; set; }
