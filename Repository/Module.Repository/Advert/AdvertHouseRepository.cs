@@ -64,7 +64,7 @@ namespace Module.Repository.Advert
             if (!string.IsNullOrEmpty(advertHouseFilter.Keyword))
             {
                 sql.AppendLine(" and (advert_house.description like @keyword or advertiser.name like @keyword or advert_house.description like @keyword) ");
-                param.Add("keyword", advertHouseFilter.Keyword);
+                param.Add("keyword", string.Concat("%", advertHouseFilter.Keyword, "%"));
             }
 
             if (advertHouseFilter.HouseTypeId.HasValue)
