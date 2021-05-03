@@ -105,7 +105,7 @@
             Foto do anunciante
             </summary>
         </member>
-        <member name="P:Module.Dto.Advertiser.AdvertiserDto.Contato">
+        <member name="P:Module.Dto.Advertiser.AdvertiserDto.Contact">
             <summary>
             Dados para contato
             </summary>
@@ -653,6 +653,11 @@
         <member name="T:Module.Dto.Config.SettingsDto">
             <summary>
             Objeto de configurações do sistema (acessado por todas as camadas)
+            </summary>
+        </member>
+        <member name="P:Module.Dto.Config.SettingsDto.Secret">
+            <summary>
+            Segredo para chave JWT token
             </summary>
         </member>
         <member name="P:Module.Dto.Config.SettingsDto.DbConnection">

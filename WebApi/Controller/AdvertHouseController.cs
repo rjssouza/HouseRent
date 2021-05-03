@@ -45,7 +45,7 @@ namespace WebApi.Controller
         [AllowAnonymous]
         public IActionResult Get(Guid advertHouseId)
         {
-            var advertHouseListView = this.AdvertHouseManagerViewService.GetAdvertView();
+            var advertHouseListView = this.AdvertHouseManagerViewService.GetAdvertView(advertHouseId);
 
             return Ok(advertHouseListView);
         }

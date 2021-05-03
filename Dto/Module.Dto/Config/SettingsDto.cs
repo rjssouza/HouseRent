@@ -12,7 +12,7 @@ namespace Module.Dto.Config
         /// <summary>
         /// Segredo para chave JWT token
         /// </summary>
-        public string Secret => PRIVATE_SECRET;
+        public static string Secret => PRIVATE_SECRET;
 
         /// <summary>
         /// Conexões com banco de dados

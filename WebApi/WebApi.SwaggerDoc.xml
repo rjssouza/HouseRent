@@ -68,6 +68,21 @@
             <param name="createAdvertHouseRequestDto">Requisição para salvar anúncio</param>
             <returns>Http Resposta 200</returns>
         </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.Sell(System.Guid,System.Guid)">
+            <summary>
+            Eftua a venda ou locação de um imóvel a partir de um contato
+            </summary>
+            <param name="advertHouseId">Identificador do anúncio</param>
+            <param name="contactRequestId">Identificador do contato</param>
+            <returns></returns>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.SendContactRequest(Module.Dto.Sell.ContactRequestDto)">
+            <summary>
+            Envia requisição para contato a partir de um anúncio
+            </summary>
+            <param name="contactRequestDto">Requisição de contato</param>
+            <returns>Http Resposta 200</returns>
+        </member>
         <member name="T:WebApi.Controller.AdvertHouseListController">
             <summary>
             Controller para lista de anúncio

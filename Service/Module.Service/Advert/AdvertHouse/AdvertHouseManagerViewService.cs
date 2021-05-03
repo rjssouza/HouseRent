@@ -84,8 +84,8 @@ namespace Module.Service.Advert.AdvertHouse
             var advertHouseDto = this.ObjectConverterFactory.ConvertTo<AdvertHouseDto>(createAdvertHouseRequestDto);
             this.OpenTransaction();
             this.AdvertHouseService.Update(advertHouseDto);
-            this.UpdateResourceList(createAdvertHouseRequestDto.Id, createAdvertHouseRequestDto.AdvertResourceList);
-            this.UpdateAdvertHousePictureList(createAdvertHouseRequestDto.Id, createAdvertHouseRequestDto.AdvertHousePictureList);
+            this.UpdateResourceList(createAdvertHouseRequestDto.AdvertResourceList);
+            this.UpdateAdvertHousePictureList(createAdvertHouseRequestDto.AdvertHousePictureList);
 
             this.Commit();
         }
@@ -100,7 +100,7 @@ namespace Module.Service.Advert.AdvertHouse
                     Name = Guid.NewGuid().ToString()
                 });
                 picture.ImageId = imageId;
-
+                picture.AdvertHouseId = advertHouseId;
                 this.AdvertImageService.Insert(picture);
             }
         }
@@ -114,7 +114,7 @@ namespace Module.Service.Advert.AdvertHouse
             }
         }
 
-        private void UpdateResourceList(Guid advertHouseId, IEnumerable<AdvertResourceDto> advertResourceList)
+        private void UpdateResourceList(IEnumerable<AdvertResourceDto> advertResourceList)
         {
             foreach (var resource in advertResourceList)
             {
@@ -122,7 +122,7 @@ namespace Module.Service.Advert.AdvertHouse
             }
         }
 
-        private void UpdateAdvertHousePictureList(Guid advertHouseId, IEnumerable<AdvertImageDto> advertHousePictureList)
+        private void UpdateAdvertHousePictureList(IEnumerable<AdvertImageDto> advertHousePictureList)
         {
             foreach (var picture in advertHousePictureList)
             {

@@ -256,7 +256,7 @@ namespace WebApi
         private void ConfigureAuthentication(IServiceCollection services)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
-            var key = Encoding.ASCII.GetBytes(this._settings.Secret);
+            var key = Encoding.ASCII.GetBytes(SettingsDto.Secret);
 
             services.AddAuthentication(x =>
             {

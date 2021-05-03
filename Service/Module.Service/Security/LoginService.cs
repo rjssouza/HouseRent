@@ -45,7 +45,7 @@ namespace Module.Service.Security
             var advertiserDto = this.AdvertiserService.GetByUserId(userLogin.Id);
 
             var tokenHandler = new JwtSecurityTokenHandler();
-            var key = Encoding.ASCII.GetBytes(Settings.Secret);
+            var key = Encoding.ASCII.GetBytes(Dto.Config.SettingsDto.Secret);
             var tokenDescriptor = new SecurityTokenDescriptor
             {
                 Subject = new ClaimsIdentity(new Claim[]
