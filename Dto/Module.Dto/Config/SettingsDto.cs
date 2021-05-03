@@ -7,6 +7,13 @@ namespace Module.Dto.Config
     /// </summary>
     public class SettingsDto : BaseDto
     {
+        private const string PRIVATE_SECRET = "fedaf7d8863b48e197b9287d492b708e";
+
+        /// <summary>
+        /// Segredo para chave JWT token
+        /// </summary>
+        public string Secret => PRIVATE_SECRET;
+
         /// <summary>
         /// Conexões com banco de dados
         /// </summary>

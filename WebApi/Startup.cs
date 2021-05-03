@@ -1,5 +1,6 @@
 using Autofac;
 using Autofac.Core;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
@@ -7,6 +8,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.PlatformAbstractions;
+using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
 using Module.Dto.Config;
 using Module.IoC.Interface;
@@ -17,6 +19,7 @@ using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
 using System.IO;
 using System.Reflection;
+using System.Text;
 using WebApi.Base;
 using WebApi.Filter;
 
@@ -99,9 +102,9 @@ namespace WebApi
                .SetIsOriginAllowed(origin => true) // allow any origin
                .AllowCredentials()); // allow credentials
 
-            //app.UseAuthorization();
+            app.UseAuthorization();
 
-            //app.UseAuthentication();
+            app.UseAuthentication();
 
             app.UseEndpoints(endpoints =>
             {
@@ -250,9 +253,27 @@ namespace WebApi
         /// Configuração da autoridade de autenticação
         /// </summary>
         /// <param name="services">Service Collection .Net Core</param>
-        private static void ConfigureAuthentication(IServiceCollection services)
+        private void ConfigureAuthentication(IServiceCollection services)
         {
             JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
+            var key = Encoding.ASCII.GetBytes(this._settings.Secret);
+
+            services.AddAuthentication(x =>
+            {
+                x.DefaultAuthenticateScheme = JwtBearerDefaults.AuthenticationScheme;
+                x.DefaultChallengeScheme = JwtBearerDefaults.AuthenticationScheme;
+            }).AddJwtBearer(x =>
+                {
+                    x.RequireHttpsMetadata = false;
+                    x.SaveToken = true;
+                    x.TokenValidationParameters = new TokenValidationParameters
+                    {
+                        ValidateIssuerSigningKey = true,
+                        IssuerSigningKey = new SymmetricSecurityKey(key),
+                        ValidateIssuer = false,
+                        ValidateAudience = false
+                    };
+                });
         }
     }
 }

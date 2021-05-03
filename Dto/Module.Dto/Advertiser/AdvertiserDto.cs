@@ -21,7 +21,7 @@ namespace Module.Dto.Advertiser
         /// <summary>
         /// Dados para contato
         /// </summary>
-        public ContactDto Contato { get; set; }
+        public ContactDto Contact { get; set; }
 
         /// <summary>
         /// Usuario de segurança associado ao anunciante para login

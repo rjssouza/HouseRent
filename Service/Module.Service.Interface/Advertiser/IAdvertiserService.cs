@@ -6,5 +6,6 @@ namespace Module.Service.Interface.Advertiser
 {
     public interface IAdvertiserService : IBaseEntityService<AdvertiserDto, Guid>
     {
+        AdvertiserDto GetByUserId(Guid userId);
     }
 }
