@@ -5,6 +5,7 @@ Para documentação foi utilizado Swagger.
 * Execute o script no repositorio
 * Pronto
 # Como utilizar o serviço de locação de imoveis
+Para o funcionamento do serviço deve ser executado o script que se encontra neste reposiório (script_locacao_imoveis.sql)
 Antes de começar a utilizar os serviços abaixo é necessário ter um token de acesso, para isso basta efetuar o cadastro como anunciante e terá um login e senha para acessar estes serviços.
 Para efetuar o cadastro como anunciante basta entrar no endpoint "/api/advertiser" e preencher os dados conforme objeto em exemplo:
 {
