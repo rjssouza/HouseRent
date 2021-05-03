@@ -1,7 +1,7 @@
 # Locação de Imóveis
 Serviço Api core rest desenvolvido para o o cadastro, listagem e locação de imóveis, este serviço foi desenvolvido utilizando tecnologia .Net core 5.0.
 Para documentação foi utilizado Swagger.
-# Como utilizar o serviço de locação de imoveis
+# Como configurar o serviço de locação de imóveis
 * Execute o script no repositorio
 * Pronto
 # Como utilizar o serviço de locação de imoveis
