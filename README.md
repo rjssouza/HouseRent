@@ -6,7 +6,17 @@ Para documentação foi utilizado Swagger.
 * Pronto
 # Como utilizar o serviço de locação de imoveis
 Antes de começar a utilizar os serviços abaixo é necessário ter um token de acesso, para isso basta efetuar o cadastro como anunciante e terá um login e senha para acessar estes serviços.
-* Cadastrar anunciante
+Para efetuar o cadastro como anunciante basta entrar no endpoint "/api/advertiser" e preencher os dados conforme objeto em exemplo:
+{
+  "Name": "Anunciante 1",
+  "Password": "123456",
+  "PassowrdConfirm": "123456",
+  "ContactInfo": {
+    "Mail": "anunciante@gmail.com"
+  }
+}
+
+* Cadastrar anuncio
 * Cadastrar imóvel
 * Editar anúncio
 * Vender anúncio 
@@ -16,7 +26,7 @@ Para utilizar os serviços listados abaixo não é necessário realizar o cadast
 * Solicitar contato
 * Efetuar busca por endereço
 
-Toda documentação detalhada deste serviço api se encontra no seguinte link:
+Foi utilizado swagger para fazer a documentação deste serviço, ela se encontra no link: https://localhost:44366/index.html
 
 # Requerimento Sistema
 * .NET Core 5.0
