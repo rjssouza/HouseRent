@@ -13,21 +13,25 @@
             <summary>
             Cep do imóvel
             </summary>
+            <example>31250-550</example>
         </member>
         <member name="P:Module.Dto.Address.AddressDto.Street">
             <summary>
             Logradouro do imóvel
             </summary>
+            <example>Avenida Manoel Gomes</example>
         </member>
         <member name="P:Module.Dto.Address.AddressDto.Neighborhood">
             <summary>
             Bairro do imóvel
             </summary>
+            <example>Nova Cachoeirinha</example>
         </member>
         <member name="P:Module.Dto.Address.AddressDto.AdressNumber">
             <summary>
             Número do imóvel
             </summary>
+            <example>100</example>
         </member>
         <member name="P:Module.Dto.Address.AddressDto.Complement">
             <summary>
@@ -38,6 +42,7 @@
             <summary>
             Cidade do imóvel
             </summary>
+            <example>2310</example>
         </member>
         <member name="P:Module.Dto.Address.AddressDto.CountyDto">
             <summary>
@@ -58,11 +63,13 @@
             <summary>
             Código ibge
             </summary>
+            <example>3106200</example>
         </member>
         <member name="P:Module.Dto.Address.CountyDto.Uf">
             <summary>
             Unidade federativa que a cidade faz parte
             </summary>
+            <example>MG</example>
         </member>
         <member name="P:Module.Dto.Address.CountyDto.State">
             <summary>
@@ -72,11 +79,6 @@
         <member name="T:Module.Dto.Address.StateDto">
             <summary>
             Dados estado
-            </summary>
-        </member>
-        <member name="P:Module.Dto.Address.StateDto.Id">
-            <summary>
-            Identificador do estado
             </summary>
         </member>
         <member name="P:Module.Dto.Address.StateDto.Uf">
@@ -89,6 +91,7 @@
             <summary>
             Código de área
             </summary>
+            <example>31</example>
         </member>
         <member name="T:Module.Dto.Advertiser.AdvertiserDto">
             <summary>
@@ -433,16 +436,13 @@
             <summary>
             Tipo do imóvel anunciado (Lote, Terreno, Etc)
             </summary>
+            <example>651d9e0d-1f55-4b3e-a750-dd26b62b27e9</example>
         </member>
         <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.GoalId">
             <summary>
             Identificador da inteção para este anúncio (Locação ou Venda)
             </summary>
-        </member>
-        <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.StatusId">
-            <summary>
-            Status do anúncio
-            </summary>
+            <example>efa6d66c-a4c9-4810-ab59-40ddb48e97e8</example>
         </member>
         <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.InternalAreaSize">
             <summary>
@@ -458,6 +458,7 @@
             <summary>
             Preço para efetuar a compra ou locação do imóvel no anúncio
             </summary>
+            <example>1000.0</example>
         </member>
         <member name="P:Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto.QtdBathrooms">
             <summary>

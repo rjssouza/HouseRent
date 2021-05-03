@@ -10,21 +10,25 @@ namespace Module.Dto.Address
         /// <summary>
         /// Cep do imóvel
         /// </summary>
+        /// <example>31250-550</example>
         public string ZipCode { get; set; }
 
         /// <summary>
         /// Logradouro do imóvel
         /// </summary>
+        /// <example>Avenida Manoel Gomes</example>
         public string Street { get; set; }
 
         /// <summary>
         /// Bairro do imóvel
         /// </summary>
+        /// <example>Nova Cachoeirinha</example>
         public string Neighborhood { get; set; }
 
         /// <summary>
         /// Número do imóvel
         /// </summary>
+        /// <example>100</example>
         public string AdressNumber { get; set; }
 
         /// <summary>
@@ -35,6 +39,7 @@ namespace Module.Dto.Address
         /// <summary>
         /// Cidade do imóvel
         /// </summary>
+        /// <example>2310</example>
         public int CountyId { get; set; }
 
         /// <summary>

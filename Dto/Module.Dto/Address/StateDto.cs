@@ -11,6 +11,7 @@ namespace Module.Dto.Address
         /// <summary>
         /// Identificador do estado
         /// </summary>
+        /// <example>31</example>
         public new int Id { get; set; }
 
         /// <summary>
@@ -22,6 +23,7 @@ namespace Module.Dto.Address
         /// <summary>
         /// Código de área
         /// </summary>
+        /// <example>31</example>
         public string AreaCode { get; set; }
     }
 }

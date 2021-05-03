@@ -10,16 +10,19 @@ namespace Module.Dto.Address
         /// <summary>
         /// Identificador da cidade
         /// </summary>
+        /// <example>2310</example>
         public new int Id { get; set; }
 
         /// <summary>
         /// Código ibge
         /// </summary>
+        /// <example>3106200</example>
         public string IbgeCode { get; set; }
 
         /// <summary>
         /// Unidade federativa que a cidade faz parte
         /// </summary>
+        /// <example>MG</example>
         public string Uf { get; set; }
 
         /// <summary>

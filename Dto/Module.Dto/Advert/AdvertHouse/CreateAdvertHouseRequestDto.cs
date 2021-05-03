@@ -32,17 +32,14 @@ namespace Module.Dto.Advert.AdvertHouse
         /// <summary>
         /// Tipo do imóvel anunciado (Lote, Terreno, Etc)
         /// </summary>
+        /// <example>651d9e0d-1f55-4b3e-a750-dd26b62b27e9</example>
         public Guid HouseTypeId { get; set; }
 
         /// <summary>
         /// Identificador da inteção para este anúncio (Locação ou Venda)
         /// </summary>
+        /// <example>efa6d66c-a4c9-4810-ab59-40ddb48e97e8</example>
         public Guid GoalId { get; set; }
-
-        /// <summary>
-        /// Status do anúncio
-        /// </summary>
-        public Guid StatusId { get; set; }
 
         /// <summary>
         /// Tamanho da área interna
@@ -57,6 +54,7 @@ namespace Module.Dto.Advert.AdvertHouse
         /// <summary>
         /// Preço para efetuar a compra ou locação do imóvel no anúncio
         /// </summary>
+        /// <example>1000.0</example>
         public Decimal Price { get; set; }
 
         /// <summary>
