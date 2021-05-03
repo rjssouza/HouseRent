@@ -15,7 +15,7 @@ Para efetuar o cadastro como anunciante basta entrar no endpoint "/api/advertise
     "Mail": "anunciante@gmail.com"
   }
 }
-
+Após o cadastro, o sistema responderá com status 200, basta efetuar o login e será retornado um token de acesso Bearer, basta utiliza-lo nas funcionalidades correspondentes.
 * Cadastrar anuncio
 * Cadastrar imóvel
 * Editar anúncio
