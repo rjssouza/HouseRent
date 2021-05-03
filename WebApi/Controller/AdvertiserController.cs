@@ -10,7 +10,7 @@ namespace WebApi.Controller
     /// </summary>
     [Route("api/advertiser")]
     [ApiController]
-    [Authorize]
+    [AllowAnonymous]
     public class AdvertiserController : ControllerBase
     {
         /// <summary>
