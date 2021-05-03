@@ -25,7 +25,6 @@ namespace WebApi.Controller
         /// <returns>Endereço preenchido</returns>
         [HttpGet]
         [Route("{zipCode}")]
-        [AllowAnonymous]
         [ProducesResponseType(typeof(AddressDto), 200)]
         public IActionResult GetAdressByZipCode(string zipCode)
         {

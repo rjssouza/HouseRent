@@ -12,11 +12,21 @@ namespace Module.Service.Advertiser
     {
         public override IAdvertiserRepository CrudRepository { get; set; }
         public override IAdvertiserValidation CrudValidation { get; set; }
+        public IContactService ContactService { get; set; }
 
         public AdvertiserDto GetByUserId(Guid userId)
         {
             var model = this.CrudRepository.GetFirstEntityByDynamicFilter(new { user_id = userId });
             var result = this.ObjectConverterFactory.ConvertTo<AdvertiserDto>(model);
+            result.Contact = this.ContactService.GetById(result.ContactId);
+
+            return result;
+        }
+
+        public override AdvertiserDto GetById(Guid id)
+        {
+            var result = base.GetById(id);
+            result.Contact = this.ContactService.GetById(result.ContactId);
 
             return result;
         }

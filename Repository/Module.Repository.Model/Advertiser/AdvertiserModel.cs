@@ -10,7 +10,7 @@ namespace Module.Repository.Model.Advertiser
         [Column("name")]
         public string Name { get; set; }
 
-        [Column("contato_id")]
+        [Column("contact_id")]
         public Guid? ContactId { get; set; }
 
         [Column("picture_id")]

@@ -1,4 +1,5 @@
-﻿using Module.Dto;
+﻿using Microsoft.AspNetCore.Http;
+using Module.Dto;
 using Module.Dto.Advert;
 using Module.Dto.Advert.AdvertHouse;
 using Module.Dto.Sell;
@@ -9,6 +10,7 @@ using Module.Service.Interface.Sell;
 using Module.Service.Validation.Interface.Advert.AdvertHouse;
 using System;
 using System.Collections.Generic;
+using System.Security.Claims;
 
 namespace Module.Service.Advert.AdvertHouse
 {
@@ -23,10 +25,18 @@ namespace Module.Service.Advert.AdvertHouse
         public IHouseTypeService HouseTypeService { get; set; }
         public IPictureService PictureService { get; set; }
         public IAdvertImageService AdvertImageService { get; set; }
+        public IHttpContextAccessor HttpContextAccessor { get; set; }
+
+        public AdvertHouseManagerViewService(IHttpContextAccessor httpContextAccessor)
+        {
+            this.HttpContextAccessor = httpContextAccessor;
+        }
 
         public void CreateAdvertHouse(CreateAdvertHouseRequestDto createAdvertHouseRequestDto)
         {
             var advertHouseDto = this.ObjectConverterFactory.ConvertTo<AdvertHouseDto>(createAdvertHouseRequestDto);
+            var advertiserId = this.HttpContextAccessor.HttpContext.User.FindFirst(ClaimTypes.Sid).Value;
+            advertHouseDto.AdvertiserId = Guid.Parse(advertiserId);
             var advertHouseId = this.AdvertHouseService.Insert(advertHouseDto);
             this.OpenTransaction();
             this.InsertResourceList(advertHouseId, createAdvertHouseRequestDto.AdvertResourceList);

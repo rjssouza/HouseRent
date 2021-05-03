@@ -51,9 +51,7 @@ namespace Module.Service.Security
                 Subject = new ClaimsIdentity(new Claim[]
                 {
                     new Claim(ClaimTypes.Name, advertiserDto.Name),
-                    new Claim(ClaimTypes.HomePhone, advertiserDto.Contact?.Phone),
-                    new Claim(ClaimTypes.Email, advertiserDto.Contact?.Mail),
-                    new Claim(ClaimTypes.MobilePhone, advertiserDto.Contact?.Cellphone),
+                    new Claim(ClaimTypes.Email, advertiserDto.Contact.Mail),
                     new Claim(ClaimTypes.Sid, advertiserDto.Id.ToString()),
                     new Claim(ClaimTypes.PrimarySid, userLogin.Id.ToString()),
                 }),
