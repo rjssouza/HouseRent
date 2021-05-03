@@ -1,4 +1,5 @@
-﻿using Module.Dto.Base;
+﻿using Module.Dto.Advertiser;
+using Module.Dto.Base;
 using System.Text.Json.Serialization;
 
 namespace Module.Dto.User.Security
@@ -18,5 +19,10 @@ namespace Module.Dto.User.Security
         /// </summary>
         [JsonIgnore]
         public string PasswordHash { get; set; }
+
+        /// <summary>
+        /// Anunciante associado ao login
+        /// </summary>
+        public AdvertiserDto Advertiser { get; set; }
     }
 }

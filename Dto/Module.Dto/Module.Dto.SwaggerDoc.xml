@@ -700,6 +700,11 @@
             Senha criptografada
             </summary>
         </member>
+        <member name="P:Module.Dto.User.Security.UserLoginDto.Advertiser">
+            <summary>
+            Anunciante associado ao login
+            </summary>
+        </member>
         <member name="T:Module.Dto.Sell.ContactRequestDto">
             <summary>
             Objeto de requisição de contato

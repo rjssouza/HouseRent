@@ -8,6 +8,6 @@ namespace Module.Service.Validation.Interface.Advert.AdvertHouse
     {
         void ValidateAdvertCreationRequest(CreateAdvertHouseRequestDto createAdvertHouseRequestDto);
 
-        void ValidateAdvertSellRequest(Guid advertId);
+        void ValidateAdvertSellRequest(Guid advertHouseId);
     }
 }

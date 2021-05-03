@@ -6,5 +6,6 @@ namespace Module.Service.Interface.Security
 {
     public interface IUserLoginService : IBaseEntityService<UserLoginDto, Guid>
     {
+        UserLoginDto GetByMail(string mail);
     }
 }

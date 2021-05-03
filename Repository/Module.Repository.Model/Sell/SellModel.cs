@@ -17,6 +17,6 @@ namespace Module.Repository.Model.Sell
         public string Description { get; set; }
 
         [Column("contact_request_id")]
-        public string ContactRequestId { get; set; }
+        public Guid ContactRequestId { get; set; }
     }
 }

@@ -27,6 +27,6 @@ namespace Module.Dto.Sell
         /// <summary>
         /// Requisição de contato que gerou a venda
         /// </summary>
-        public string ContactRequestId { get; set; }
+        public Guid ContactRequestId { get; set; }
     }
 }

@@ -20,7 +20,7 @@ namespace Module.Repository.Model.Advert
         public Guid HouseTypeId { get; set; }
 
         [Column("address_id")]
-        public Guid AdressId { get; set; }
+        public Guid AddressId { get; set; }
 
         [Column("goal_id")]
         public Guid GoalId { get; set; }

@@ -24,7 +24,7 @@
             Serviço de endereço
             </summary>
         </member>
-        <member name="M:WebApi.Controller.AddressController.GetByCep(System.String)">
+        <member name="M:WebApi.Controller.AddressController.GetAdressByZipCode(System.String)">
             <summary>
             Obtém dados de endereço a partir do cep
             </summary>

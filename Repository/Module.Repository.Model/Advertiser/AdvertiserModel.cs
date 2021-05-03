@@ -11,7 +11,7 @@ namespace Module.Repository.Model.Advertiser
         public string Name { get; set; }
 
         [Column("contato_id")]
-        public Guid ContactId { get; set; }
+        public Guid? ContactId { get; set; }
 
         [Column("picture_id")]
         public Guid? PictureId { get; set; }
