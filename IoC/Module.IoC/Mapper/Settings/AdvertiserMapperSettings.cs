@@ -1,6 +1,8 @@
 ﻿using AutoMapper;
 using Module.Dto.Advertiser;
+using Module.Dto.User.Security;
 using Module.Repository.Model.Advertiser;
+using Module.Repository.Model.User;
 
 namespace Module.IoC.Mapper
 {
@@ -20,6 +22,10 @@ namespace Module.IoC.Mapper
             // Mapeamento dados de contato
             mapperConfigExpression.CreateMap<ContactDto, ContactModel>();
             mapperConfigExpression.CreateMap<ContactModel, ContactDto>();
+
+            // Mapeamento usuario de login
+            mapperConfigExpression.CreateMap<UserLoginDto, UserLoginModel>();
+            mapperConfigExpression.CreateMap<UserLoginModel, UserLoginDto>();
         }
     }
 }

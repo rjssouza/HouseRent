@@ -8,11 +8,6 @@ namespace Module.Dto.Advertiser
     public class AdvertiserUserDto : NameBaseDto
     {
         /// <summary>
-        /// Email de do anunciante
-        /// </summary>
-        public string Email { get; set; }
-
-        /// <summary>
         /// Senha 
         /// </summary>
         public string Password { get; set; }

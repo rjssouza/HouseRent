@@ -120,11 +120,6 @@
             Objeto para requisição de cadastro para novo anunciante
             </summary>
         </member>
-        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.Email">
-            <summary>
-            Email de do anunciante
-            </summary>
-        </member>
         <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.Password">
             <summary>
             Senha 

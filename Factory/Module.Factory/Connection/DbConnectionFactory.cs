@@ -77,7 +77,7 @@ namespace Module.Factory.Conexao
         /// </summary>
         public void Rollback()
         {
-            if (this._dbTransaction != null)
+            if (this._dbTransaction != null && this._dbTransaction.Connection != null)
                 this._dbTransaction.Rollback();
         }
 

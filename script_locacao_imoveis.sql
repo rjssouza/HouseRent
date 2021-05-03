@@ -5,7 +5,7 @@ use houserent;
 
 create table dbo.user_login(id UNIQUEIDENTIFIER not null,
 login varchar(50) not null,
-password_hash varchar(10) not null,
+password_hash varchar(300) not null,
 PRIMARY KEY (id));
 
 create table dbo.image(id UNIQUEIDENTIFIER not null,
@@ -14,8 +14,8 @@ array varbinary(5000) not null,
 PRIMARY KEY (id));
 
 create table dbo.contact(id UNIQUEIDENTIFIER not null,
-phone varchar(15) not null,
-cellphone varchar(15) not null,
+phone varchar(15) null,
+cellphone varchar(15) null,
 mail varchar(320) not null,
 PRIMARY KEY (id));
 

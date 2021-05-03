@@ -1,5 +1,6 @@
 ﻿using Module.Dto;
 using Module.Dto.Advertiser;
+using Module.Dto.User.Security;
 using Module.Service.Base;
 using Module.Service.Interface;
 using Module.Service.Interface.Advertiser;
@@ -32,9 +33,9 @@ namespace Module.Service.Advertiser
 
         private Guid SaveLogin(AdvertiserUserDto advertiserUserDto)
         {
-            var userLoginId = this.UserLoginService.Insert(new Dto.User.Security.UserLoginDto()
+            var userLoginId = this.UserLoginService.Insert(new UserLoginDto()
             {
-                Login = advertiserUserDto.Email,
+                Login = advertiserUserDto.ContactInfo.Mail,
                 PasswordHash = BCrypt.Net.BCrypt.HashPassword(advertiserUserDto.Password),
             });
 
@@ -57,7 +58,7 @@ namespace Module.Service.Advertiser
 
         private Guid SaveContactInfo(AdvertiserUserDto advertiserUserDto)
         {
-            if (advertiserUserDto.ContactInfo != null)
+            if (advertiserUserDto.ContactInfo == null)
                 return Guid.Empty;
 
             var contactId = this.ContactService.Insert(advertiserUserDto.ContactInfo);
