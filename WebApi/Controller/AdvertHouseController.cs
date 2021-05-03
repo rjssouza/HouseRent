@@ -14,6 +14,7 @@ namespace WebApi.Controller
     /// </summary>
     [Route("api/advert-house")]
     [ApiController]
+    [Authorize]
     public class AdvertHouseController : ServiceController
     {
         /// <summary>

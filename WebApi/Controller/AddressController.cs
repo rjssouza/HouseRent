@@ -11,6 +11,7 @@ namespace WebApi.Controller
     /// </summary>
     [Route("api/address")]
     [ApiController]
+    [Authorize]
     public class AddressController : ServiceController
     {
         /// <summary>

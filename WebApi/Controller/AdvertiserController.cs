@@ -1,4 +1,5 @@
-﻿using Microsoft.AspNetCore.Mvc;
+﻿using Microsoft.AspNetCore.Authorization;
+using Microsoft.AspNetCore.Mvc;
 using Module.Dto.Advertiser;
 using Module.Service.Interface.Advertiser;
 
@@ -9,6 +10,7 @@ namespace WebApi.Controller
     /// </summary>
     [Route("api/advertiser")]
     [ApiController]
+    [Authorize]
     public class AdvertiserController : ControllerBase
     {
         /// <summary>

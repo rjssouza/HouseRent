@@ -54,11 +54,14 @@ namespace Module.Service.Security
                     new Claim(ClaimTypes.Email, advertiserDto.Contact.Mail),
                     new Claim(ClaimTypes.Sid, advertiserDto.Id.ToString()),
                     new Claim(ClaimTypes.PrimarySid, userLogin.Id.ToString()),
+                    new Claim(ClaimTypes.Role, "admin")
+
                 }),
                 Expires = DateTime.UtcNow.AddHours(2),
                 SigningCredentials = new SigningCredentials(new SymmetricSecurityKey(key), SecurityAlgorithms.HmacSha256Signature)
             };
             var token = tokenHandler.CreateToken(tokenDescriptor);
+
             return tokenHandler.WriteToken(token);
         }
     }

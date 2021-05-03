@@ -101,10 +101,9 @@ namespace WebApi
                .AllowAnyHeader()
                .SetIsOriginAllowed(origin => true) // allow any origin
                .AllowCredentials()); // allow credentials
-
-            app.UseAuthorization();
-
+            
             app.UseAuthentication();
+            app.UseAuthorization();
 
             app.UseEndpoints(endpoints =>
             {
@@ -183,16 +182,33 @@ namespace WebApi
                 c.EnableAnnotations();
 
                 var security = new OpenApiSecurityRequirement
-                {                   
-                    {new OpenApiSecurityScheme() { Type = SecuritySchemeType.Http }, new string[] { }}
+                {
+                    { 
+                        new OpenApiSecurityScheme
+                        {
+                            Reference = new OpenApiReference
+                            {
+                                Type = ReferenceType.SecurityScheme,
+                                Id = "Bearer"
+                            },
+                            Scheme = "oauth2",
+                            Name = "Bearer",
+                            In = ParameterLocation.Header,
+
+                        }, 
+                        new string[] { }
+                    }
                 };
-                
+
                 c.AddSecurityDefinition(
                     "Bearer",
                     new OpenApiSecurityScheme
                     {
                         Description = "Copie 'Bearer ' + token'",
-                        Name = "Authorization"
+                        Name = "Authorization",
+                        In = ParameterLocation.Header,
+                        Type = SecuritySchemeType.ApiKey,
+                        Scheme = "Bearer"
                     });
 
                 c.AddSecurityRequirement(security);
@@ -255,7 +271,6 @@ namespace WebApi
         /// <param name="services">Service Collection .Net Core</param>
         private void ConfigureAuthentication(IServiceCollection services)
         {
-            JwtSecurityTokenHandler.DefaultInboundClaimTypeMap.Clear();
             var key = Encoding.ASCII.GetBytes(SettingsDto.Secret);
 
             services.AddAuthentication(x =>
