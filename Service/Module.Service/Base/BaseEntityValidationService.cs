@@ -1,4 +1,5 @@
-﻿using Module.Repository.Interface.Base;
+﻿using Module.Dto.Base;
+using Module.Repository.Interface.Base;
 using Module.Repository.Model.Base;
 using Module.Service.Interface.Base;
 using Module.Service.Validation.Interface.Base;
@@ -9,6 +10,7 @@ namespace Module.Service.Base
         where TModel : BaseModel
         where TRepository : IBaseCrudRepository<TModel>
         where TValidation : IBaseCrudValidation<TModel>
+        where TDto : BaseDto
     {
         public abstract TValidation CrudValidation { get; set; }
 

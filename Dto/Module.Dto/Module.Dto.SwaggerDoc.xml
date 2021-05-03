@@ -140,6 +140,11 @@
             Informações de contato
             </summary>
         </member>
+        <member name="P:Module.Dto.Advertiser.AdvertiserUserDto.Picture">
+            <summary>
+            Foto do anunciante em base 64
+            </summary>
+        </member>
         <member name="T:Module.Dto.Advertiser.ContactDto">
             <summary>
             Dados para contato 
@@ -190,7 +195,7 @@
             Tipo do imóvel anunciado (Lote, Terreno, Etc)
             </summary>
         </member>
-        <member name="P:Module.Dto.Advert.AdvertHouseDto.AdressId">
+        <member name="P:Module.Dto.Advert.AdvertHouseDto.AddressId">
             <summary>
             Identificador do endereço do imóvel
             </summary>
@@ -591,7 +596,7 @@
         </member>
         <member name="T:Module.Dto.Base.BaseGenericSelectDto`1">
             <summary>
-            Classe abstrata para objetos de seleção combo, listview etc.
+            Classe para objetos de seleção combo, listview etc.
             </summary>
             <typeparam name="T">Tipo genérico do valor</typeparam>
         </member>

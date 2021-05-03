@@ -31,6 +31,100 @@
             <param name="zipCode">Cep do endereço</param>
             <returns>Endereço preenchido</returns>
         </member>
+        <member name="T:WebApi.Controller.AdvertHouseController">
+            <summary>
+            Controller para lista de anúncio
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.AdvertHouseController.AdvertHouseManagerViewService">
+            <summary>
+            Serviço para visualizar e gerenciar anuncio
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.Get">
+            <summary>
+            Obtém dados para obter dados para view de cadastro de um novo anúncio de imóvel para locação ou compra
+            </summary>
+            <returns>Dados para cadastro de novo anúncio</returns>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.Get(System.Guid)">
+            <summary>
+            Obtém dados para a view de edição ou visualização do anúncio de imóvel para locação ou compra
+            </summary>
+            <param name="advertHouseId">Identificador do anúncio</param>
+            <returns>Dados para edição ou visão de novo anúncio</returns>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.Post(Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto)">
+            <summary>
+            Chamada para salvar informações do anúncio
+            </summary>
+            <param name="createAdvertHouseRequestDto">Requisição para salvar anúncio</param>
+            <returns>Http Resposta 200</returns>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseController.Put(Module.Dto.Advert.AdvertHouse.CreateAdvertHouseRequestDto)">
+            <summary>
+            Chamada para editar informações do anúncio
+            </summary>
+            <param name="createAdvertHouseRequestDto">Requisição para salvar anúncio</param>
+            <returns>Http Resposta 200</returns>
+        </member>
+        <member name="T:WebApi.Controller.AdvertHouseListController">
+            <summary>
+            Controller para lista de anúncio
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.AdvertHouseListController.AdvertHouseListViewService">
+            <summary>
+            Serviço para lista de anúncio de imóveis
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseListController.Get">
+            <summary>
+            Obtém dados para a tela de lista de anúncios
+            </summary>
+            <returns>Dados para tela de lista de anúncios</returns>
+        </member>
+        <member name="M:WebApi.Controller.AdvertHouseListController.Post(Module.Dto.Advert.AdvertHouseFilterDto)">
+            <summary>
+            Obtém lista de imóveis anunciados por filtro
+            </summary>
+            <param name="advertHouseFilter">Filtro lista de anúncios</param>
+            <returns>Lista de imóveis anunciados por filtro</returns>
+        </member>
+        <member name="T:WebApi.Controller.AdvertiserController">
+            <summary>
+            Controller para cadastro de anunciante
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.AdvertiserController.AdvertiserManagerService">
+            <summary>
+            Serviço para cadastro de anunciante
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.AdvertiserController.Post(Module.Dto.Advertiser.AdvertiserUserDto)">
+            <summary>
+            Cadastrar anunciante, e gerar um login de acesso ao sistema
+            </summary>
+            <param name="advertiserUserDto">Objeto para requisição de cadastro para novo anunciante</param>
+            <returns>Código Http 200</returns>
+        </member>
+        <member name="T:WebApi.Controller.LoginController">
+            <summary>
+            Controller para login para área do anúnciante
+            </summary>
+        </member>
+        <member name="P:WebApi.Controller.LoginController.LoginService">
+            <summary>
+            Serviço de login
+            </summary>
+        </member>
+        <member name="M:WebApi.Controller.LoginController.Post(Module.Dto.Security.LoginRequestDto)">
+            <summary>
+            Requisição para token de acesso de login para utilizar os serviços de área do anunciante
+            </summary>
+            <param name="loginRequestDto">Requisição de login</param>
+            <returns>Token de acesso</returns>
+        </member>
         <member name="T:WebApi.Controller.ValuesController">
             <summary>
             Controller de teste de template
