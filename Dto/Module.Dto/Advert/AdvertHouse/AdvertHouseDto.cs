@@ -33,7 +33,7 @@ namespace Module.Dto.Advert
         /// <summary>
         /// Identificador do endereço do imóvel
         /// </summary>
-        public Guid AdressId { get; set; }
+        public Guid AddressId { get; set; }
 
         /// <summary>
         /// Identificador da inteção para este anúncio (Locação ou Venda)

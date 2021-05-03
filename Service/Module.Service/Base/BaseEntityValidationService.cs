@@ -10,7 +10,7 @@ namespace Module.Service.Base
         where TRepository : IBaseCrudRepository<TModel>
         where TValidation : IBaseCrudValidation<TModel>
     {
-        private TValidation CrudValidation { get; set; }
+        public abstract TValidation CrudValidation { get; set; }
 
         /// <summary>
         /// Efetua a chamada para validação de deleção de dados da entidade

@@ -1,6 +1,7 @@
 ﻿using Module.Dto.Security;
 using Module.Service.Base;
 using Module.Service.Interface.Security;
+using Module.Service.Validation.Interface.Security;
 using System;
 
 namespace Module.Service.Security
@@ -10,6 +11,8 @@ namespace Module.Service.Security
     /// </summary>
     public class LoginService : BaseService, ILoginService
     {
+        public ILoginValidation LoginValidation { get; set; }
+
         /// <summary>
         /// Efetua o login do anunciante
         /// </summary>
@@ -17,6 +20,8 @@ namespace Module.Service.Security
         /// <returns>Token de acesso</returns>
         public string DoLogin(LoginRequestDto loginRequestDto)
         {
+            this.LoginValidation.ValidateLogin(loginRequestDto);
+
             throw new NotImplementedException();
         }
     }

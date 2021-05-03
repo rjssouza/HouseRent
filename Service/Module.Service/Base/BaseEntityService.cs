@@ -1,12 +1,15 @@
-﻿using Module.Repository.Interface.Base;
+﻿using Module.Dto.Base;
+using Module.Repository.Interface.Base;
 using Module.Repository.Model.Base;
 using Module.Service.Interface.Base;
+using System;
 
 namespace Module.Service.Base
 {
     public abstract class BaseEntityService<TModel, TDto, TKeyType, TRepository> : BaseService, IBaseEntityService<TDto, TKeyType>
         where TModel : BaseModel
         where TRepository : IBaseCrudRepository<TModel>
+        where TDto : BaseDto
     {
         public abstract TRepository CrudRepository { get; set; }
 
@@ -42,15 +45,18 @@ namespace Module.Service.Base
         /// Insere os dados da entidade efetuando as validaões necessarias
         /// </summary>
         /// <param name="dtoObject">Objeto dto </param>
-        public virtual void Insert(TDto dtoObject)
+        public virtual Guid Insert(TDto dtoObject)
         {
+            dtoObject.Id = Guid.NewGuid();
             var model = this.ObjectConverterFactory.ConvertTo<TModel>(dtoObject);
             this.ValidateInsert(model);
 
             this.OpenTransaction();
-            this.CrudRepository.Insert(model);
+            var result = this.CrudRepository.Insert(model);
 
             this.Commit();
+
+            return result;
         }
 
         /// <summary>

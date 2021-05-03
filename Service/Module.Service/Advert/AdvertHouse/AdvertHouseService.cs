@@ -4,11 +4,12 @@ using Module.Repository.Model.Advert;
 using Module.Service.Base;
 using Module.Service.Interface.Address;
 using Module.Service.Interface.Advert;
+using Module.Service.Validation.Interface.Advert.AdvertHouse;
 using System;
 
 namespace Module.Service.Advert.AdvertHouse
 {
-    public class AdvertHouseService : BaseEntityService<AdvertHouseModel, AdvertHouseDto, Guid, IAdvertHouseRepository>, IAdvertHouseService
+    public class AdvertHouseService : BaseEntityService<AdvertHouseModel, AdvertHouseDto, Guid, IAdvertHouseRepository, IAdvertHouseValidation>, IAdvertHouseService
     {
         public IAdvertResourceService AdvertResourceService { get; set; }
         public IAdvertImageService AdvertImageService { get; set; }
@@ -17,6 +18,7 @@ namespace Module.Service.Advert.AdvertHouse
         public IHouseTypeService HouseTypeService { get; set; }
         public IAdvertStatusService AdvertStatusService { get; set; }
         public override IAdvertHouseRepository CrudRepository { get; set; }
+        public override IAdvertHouseValidation CrudValidation { get; set; }
 
         public override AdvertHouseDto GetById(Guid id)
         {

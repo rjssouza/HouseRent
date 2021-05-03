@@ -1,5 +1,6 @@
 ﻿using Module.Dto.Advert.AdvertHouse;
 using Module.Service.Interface.Advert;
+using Module.Service.Interface.Sell;
 using Module.Service.Validation.Base;
 using Module.Service.Validation.Interface.Advert.AdvertHouse;
 using System;
@@ -11,6 +12,7 @@ namespace Module.Service.Validation.Advert.AdvertHouse
         private const string PUBLISHED = "9E37FB70-3EC7-4E60-8BF3-1BD4E942C7DE";
 
         public IAdvertHouseService AdvertHouseService { get; set; }
+        public IContactRequestService ContactRequestService { get; set; }
 
         public void ValidateAdvertCreationRequest(CreateAdvertHouseRequestDto createAdvertHouseRequestDto)
         {
@@ -21,11 +23,20 @@ namespace Module.Service.Validation.Advert.AdvertHouse
             this.OnValidated();
         }
 
-        public void ValidateAdvertSellRequest(Guid advertHouseId)
+        public void ValidateAdvertSellRequest(Guid advertHouseId, Guid contactRequestId)
         {
             this.AdvertStatus_AdvertMustBeOnPublishedStatus(advertHouseId);
+            this.ContactRequest_ContactRequestMustExists(advertHouseId);
 
             this.OnValidated();
+        }
+
+        private void ContactRequest_ContactRequestMustExists(Guid contactRequestId)
+        {
+            var message = "É necessário associar um contato a esta venda";
+            var contactRequestDto = this.ContactRequestService.GetById(contactRequestId);
+            if (contactRequestDto == null)
+                this.summary.AddError("SellRequest", message);
         }
 
         private void Title_AdvertHouseMustHaveTitle(CreateAdvertHouseRequestDto createAdvertHouseRequestDto)

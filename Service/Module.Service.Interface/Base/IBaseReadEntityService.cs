@@ -1,6 +1,9 @@
-﻿namespace Module.Service.Interface.Base
+﻿using Module.Dto.Base;
+
+namespace Module.Service.Interface.Base
 {
     public interface IBaseReadEntityService<TDto, TKeyType> : IBaseService
+        where TDto : BaseDto
     {
         /// <summary>
         /// Obtem pelo identificador

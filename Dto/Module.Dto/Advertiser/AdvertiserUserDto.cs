@@ -26,5 +26,10 @@ namespace Module.Dto.Advertiser
         /// Informações de contato
         /// </summary>
         public ContactDto ContactInfo { get; set; }
+
+        /// <summary>
+        /// Foto do anunciante em base 64
+        /// </summary>
+        public byte[] Picture { get; set; }
     }
 }

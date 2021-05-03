@@ -4,10 +4,10 @@ using System.ComponentModel;
 namespace Module.Dto.Base
 {
     /// <summary>
-    /// Classe abstrata para objetos de seleção combo, listview etc.
+    /// Classe para objetos de seleção combo, listview etc.
     /// </summary>
     /// <typeparam name="T">Tipo genérico do valor</typeparam>
-    public abstract class BaseGenericSelectDto<T>
+    public class BaseGenericSelectDto<T>
     {
         /// <summary>
         /// Texto para ser exibido na caixa de seleção

@@ -15,6 +15,7 @@ namespace Module.IoC.Mapper
             // Mapeamento anunciante
             mapperConfigExpression.CreateMap<AdvertiserDto, AdvertiserModel>();
             mapperConfigExpression.CreateMap<AdvertiserModel, AdvertiserDto>();
+            mapperConfigExpression.CreateMap<AdvertiserUserDto, AdvertiserDto>();
 
             // Mapeamento dados de contato
             mapperConfigExpression.CreateMap<ContactDto, ContactModel>();

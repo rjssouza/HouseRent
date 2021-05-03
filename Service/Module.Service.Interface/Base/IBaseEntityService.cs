@@ -1,12 +1,16 @@
-﻿namespace Module.Service.Interface.Base
+﻿using Module.Dto.Base;
+using System;
+
+namespace Module.Service.Interface.Base
 {
     public interface IBaseEntityService<TDto, TKeyType> : IBaseReadEntityService<TDto, TKeyType>
+        where TDto : BaseDto
     {
         /// <summary>
         /// Insere os dados da entidade efetuando as validaões necessarias
         /// </summary>
         /// <param name="dtoObject">Objeto dto </param>
-        void Insert(TDto dtoObject);
+        Guid Insert(TDto dtoObject);
 
         /// <summary>
         /// Atualiza as informações da entidade efetuando as validações necessarias

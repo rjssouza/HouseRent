@@ -15,6 +15,11 @@ namespace Module.Repository.Advert
         {
         }
 
+        /// <summary>
+        /// Obtém lista de imóveis anunciados por filtro
+        /// </summary>
+        /// <param name="advertHouseFilter">Filtro lista de anúncios</param>
+        /// <returns>Lista de imóveis anunciados por filtro</returns>
         public IEnumerable<AdvertHouseListItemDto> GetAdvertHouseList(AdvertHouseFilterDto advertHouseFilter)
         {
             var sql = new StringBuilder(@"select
@@ -75,14 +80,14 @@ namespace Module.Repository.Advert
                 param.Add("limitMax", advertHouseFilter.LimitMax);
             }
 
-			if (!string.IsNullOrEmpty(advertHouseFilter.OrderBy))
+            if (!string.IsNullOrEmpty(advertHouseFilter.OrderBy))
             {
-				sql.AppendLine($" order by {advertHouseFilter.OrderBy} ");
-			}
+                sql.AppendLine($" order by {advertHouseFilter.OrderBy} ");
+            }
 
-			var result = this.Select<AdvertHouseListItemDto>(sql.ToString(), param);
+            var result = this.Select<AdvertHouseListItemDto>(sql.ToString(), param);
 
-			return result;
+            return result;
         }
     }
 }
