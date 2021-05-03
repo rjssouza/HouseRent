@@ -58,6 +58,7 @@
             <summary>
             Identificador da cidade
             </summary>
+            <example>2310</example>
         </member>
         <member name="P:Module.Dto.Address.CountyDto.IbgeCode">
             <summary>
@@ -80,6 +81,12 @@
             <summary>
             Dados estado
             </summary>
+        </member>
+        <member name="P:Module.Dto.Address.StateDto.Id">
+            <summary>
+            Identificador do estado
+            </summary>
+            <example>31</example>
         </member>
         <member name="P:Module.Dto.Address.StateDto.Uf">
             <summary>
