@@ -163,19 +163,13 @@ namespace WebApi
                 c.SwaggerDoc("v1", new OpenApiInfo
                 {
                     Version = "v1",
-                    Title = "ToDo API",
-                    Description = "A simple example ASP.NET Core Web API",
-                    TermsOfService = new Uri("https://example.com/terms"),
+                    Title = "Locação de Imóveis Api",
+                    Description = "Serviço para cadastro e locação ou compra de imóveis utilizando ASP.NET Core Web API",
                     Contact = new OpenApiContact
                     {
-                        Name = "Shayne Boyer",
-                        Email = string.Empty,
-                        Url = new Uri("https://twitter.com/spboyer"),
-                    },
-                    License = new OpenApiLicense
-                    {
-                        Name = "Use under LICX",
-                        Url = new Uri("https://example.com/license"),
+                        Name = "Robson Souza",
+                        Email = "robsonjesus908@gmail.com",
+                        Url = new Uri("https://github.com/rjssouza/HouseRent"),
                     }
                 });
 
